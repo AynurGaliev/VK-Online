@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="44" id="8a4-Dh-aKz" customClass="FriendCell" customModule="VK_Online" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8a4-Dh-aKz" id="cah-1q-5Ob">
+                <frame key="frameInset" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="1Rs-85-4RO">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="Feh-dq-zxY"/>
+                            <constraint firstAttribute="height" constant="32" id="SmC-4D-7MR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vladislav Namestnikov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yh-iH-pNc">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjY-lY-qtE">
+                        <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="885-Vd-tDf"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online_mobile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="L00-tj-zUq">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="8" id="Sts-0g-XXj"/>
+                            <constraint firstAttribute="height" constant="16" id="gyh-WM-vZP"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-MG-pj9">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="Bsi-lq-ZbZ"/>
+                            <constraint firstAttribute="height" constant="11" id="u3h-DL-pik"/>
+                        </constraints>
+                        <state key="normal" image="watch_icon">
+                            <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="DRh-MG-pj9" firstAttribute="leading" secondItem="8yh-iH-pNc" secondAttribute="trailing" constant="8" id="6p1-Hq-XSX"/>
+                    <constraint firstAttribute="trailing" secondItem="WjY-lY-qtE" secondAttribute="trailing" id="9cH-VB-AY6"/>
+                    <constraint firstItem="1Rs-85-4RO" firstAttribute="centerY" secondItem="cah-1q-5Ob" secondAttribute="centerY" id="JL9-J8-cNR"/>
+                    <constraint firstItem="L00-tj-zUq" firstAttribute="centerY" secondItem="cah-1q-5Ob" secondAttribute="centerY" id="LYv-p9-k0t"/>
+                    <constraint firstItem="8yh-iH-pNc" firstAttribute="leading" secondItem="1Rs-85-4RO" secondAttribute="trailing" constant="8" id="Muh-rH-Ovb"/>
+                    <constraint firstItem="1Rs-85-4RO" firstAttribute="leading" secondItem="cah-1q-5Ob" secondAttribute="leading" constant="10" id="Nec-xz-WIo"/>
+                    <constraint firstAttribute="trailing" secondItem="L00-tj-zUq" secondAttribute="trailing" constant="10" id="PXP-fH-b6M"/>
+                    <constraint firstAttribute="bottom" secondItem="WjY-lY-qtE" secondAttribute="bottom" id="R9F-pc-kSm"/>
+                    <constraint firstItem="L00-tj-zUq" firstAttribute="leading" secondItem="DRh-MG-pj9" secondAttribute="trailing" constant="8" id="UBW-LF-7aw"/>
+                    <constraint firstItem="8yh-iH-pNc" firstAttribute="centerY" secondItem="1Rs-85-4RO" secondAttribute="centerY" id="jk7-Lw-AUq"/>
+                    <constraint firstItem="WjY-lY-qtE" firstAttribute="leading" secondItem="cah-1q-5Ob" secondAttribute="leading" constant="51" id="v4o-U5-wLd"/>
+                    <constraint firstItem="DRh-MG-pj9" firstAttribute="centerY" secondItem="cah-1q-5Ob" secondAttribute="centerY" id="zhj-kW-q7m"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="1Rs-85-4RO" id="4UL-uS-9IO"/>
+                <outlet property="nameLabel" destination="8yh-iH-pNc" id="jKu-9Q-E0q"/>
+                <outlet property="onlineImageView" destination="L00-tj-zUq" id="xuy-SG-kqZ"/>
+                <outlet property="onlineImageViewHeightConstraint" destination="gyh-WM-vZP" id="uWy-Ne-SxY"/>
+                <outlet property="onlineImageViewLeftMarginConstraint" destination="UBW-LF-7aw" id="qC9-Wf-3aB"/>
+                <outlet property="onlineImageViewWidthConstraint" destination="Sts-0g-XXj" id="Z38-48-luq"/>
+                <outlet property="watchButton" destination="DRh-MG-pj9" id="Rq1-fV-QJE"/>
+            </connections>
+            <point key="canvasLocation" x="130" y="-50"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="online_mobile_icon" width="47" height="90"/>
+        <image name="placeholder" width="30" height="30"/>
+        <image name="watch_icon" width="100" height="57"/>
+    </resources>
+</document>

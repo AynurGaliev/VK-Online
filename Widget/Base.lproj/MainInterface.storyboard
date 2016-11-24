@@ -8,7 +8,7 @@
         <!--Friends View Controller-->
         <scene sceneID="cwh-vc-ff4">
             <objects>
-                <viewController id="M4Y-Lb-cyx" customClass="FriendsViewController" customModule="Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M4Y-Lb-cyx" customClass="FriendsViewController" customModule="VK_Online" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
@@ -19,50 +19,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GU6-gA-uLd">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsCell" rowHeight="44" id="TSd-wI-fmw" customClass="FriendCell" customModule="Widget" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TSd-wI-fmw" id="5SN-yc-CXD">
-                                            <frame key="frameInset" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C6A-r1-aNh">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="32" id="PKg-qE-7YB"/>
-                                                        <constraint firstAttribute="width" constant="32" id="adZ-Cn-jTn"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeb-BI-7E5">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sob-mK-oNx">
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="I4E-W2-VhS"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" red="1" green="0.15430444662410558" blue="0.098662494795929589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="zeb-BI-7E5" secondAttribute="trailing" constant="10" id="8DM-yj-Vwv"/>
-                                                <constraint firstItem="C6A-r1-aNh" firstAttribute="leading" secondItem="5SN-yc-CXD" secondAttribute="leading" constant="10" id="8yv-tg-kuP"/>
-                                                <constraint firstItem="zeb-BI-7E5" firstAttribute="leading" secondItem="C6A-r1-aNh" secondAttribute="trailing" constant="8" id="BAF-I1-yVu"/>
-                                                <constraint firstAttribute="trailing" secondItem="sob-mK-oNx" secondAttribute="trailing" id="RjP-Xw-qA2"/>
-                                                <constraint firstItem="sob-mK-oNx" firstAttribute="leading" secondItem="5SN-yc-CXD" secondAttribute="leading" id="WGt-ZP-Nqv"/>
-                                                <constraint firstItem="zeb-BI-7E5" firstAttribute="centerY" secondItem="C6A-r1-aNh" secondAttribute="centerY" id="shw-ff-LbH"/>
-                                                <constraint firstItem="C6A-r1-aNh" firstAttribute="centerY" secondItem="5SN-yc-CXD" secondAttribute="centerY" id="uhE-xO-o4O"/>
-                                                <constraint firstAttribute="bottom" secondItem="sob-mK-oNx" secondAttribute="bottom" id="vkU-zp-Rba"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="avatarImageView" destination="C6A-r1-aNh" id="5r2-MV-ho5"/>
-                                            <outlet property="nameLabel" destination="zeb-BI-7E5" id="2tn-RJ-ibn"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <constraints>
@@ -84,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-534.39999999999998" y="-190.70464767616193"/>
+            <point key="canvasLocation" x="-696" y="-247.37631184407797"/>
         </scene>
     </scenes>
 </document>

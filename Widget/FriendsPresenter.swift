@@ -12,11 +12,6 @@ import NotificationCenter
 final class FriendsPresenter: NSObject, NCWidgetProviding {
 
     @nonobjc func widgetPerformUpdate(completionHandler: ((NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
         
         completionHandler(NCUpdateResult.newData)
     }
@@ -38,7 +33,7 @@ extension FriendsPresenter: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell") as! FriendCell
+        let cell: FriendCell = tableView.dequeCell()
         cell.nameLabel.text = "\(indexPath.row)"
         return cell
     }

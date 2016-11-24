@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A4165F3C1DE63C4200EE242A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F3B1DE63C4200EE242A /* AppDelegate.swift */; };
-		A4165F3E1DE63C4200EE242A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F3D1DE63C4200EE242A /* ViewController.swift */; };
+		A4165F3E1DE63C4200EE242A /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F3D1DE63C4200EE242A /* FriendsController.swift */; };
 		A4165F411DE63C4200EE242A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F3F1DE63C4200EE242A /* Main.storyboard */; };
 		A4165F431DE63C4200EE242A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4165F421DE63C4200EE242A /* Assets.xcassets */; };
 		A4165F461DE63C4200EE242A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F441DE63C4200EE242A /* LaunchScreen.storyboard */; };
@@ -18,12 +18,24 @@
 		A4165F7A1DE63C9500EE242A /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A4165F6D1DE63C9500EE242A /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A4165F801DE63E0300EE242A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F7F1DE63E0300EE242A /* FriendCell.swift */; };
 		A4165F831DE63FB400EE242A /* FriendsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F821DE63FB400EE242A /* FriendsPresenter.swift */; };
-		A4165F861DE63FD500EE242A /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F851DE63FD500EE242A /* ServiceLocator.swift */; };
-		A4165F881DE6409000EE242A /* FriendsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F871DE6409000EE242A /* FriendsModule.swift */; };
 		A4165F8C1DE64B5000EE242A /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */; };
 		A4165F8D1DE64B5000EE242A /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4165F901DE64B6000EE242A /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8F1DE64B6000EE242A /* WebImage.framework */; };
 		A4165F911DE64B6000EE242A /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8F1DE64B6000EE242A /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A464C46D1DE715A400C72EFE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F741DE63C9500EE242A /* MainInterface.storyboard */; };
+		A464C46F1DE715F600C72EFE /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A464C46E1DE715F600C72EFE /* FriendCell.xib */; };
+		A464C4711DE7163300C72EFE /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A464C46E1DE715F600C72EFE /* FriendCell.xib */; };
+		A464C4731DE71E8100C72EFE /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A464C4721DE71E8100C72EFE /* HeaderView.xib */; };
+		A464C4751DE71EDD00C72EFE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464C4741DE71EDD00C72EFE /* HeaderView.swift */; };
+		A464C4761DE71EDD00C72EFE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464C4741DE71EDD00C72EFE /* HeaderView.swift */; };
+		A464C4781DE7209100C72EFE /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A464C4721DE71E8100C72EFE /* HeaderView.xib */; };
+		A480B1921DE6EA7500ADA206 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1911DE6EA7500ADA206 /* Storage.swift */; };
+		A480B1951DE6ED9500ADA206 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F7F1DE63E0300EE242A /* FriendCell.swift */; };
+		A480B1971DE6EDF100ADA206 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1961DE6EDF100ADA206 /* Helpers.swift */; };
+		A480B1981DE6EE1500ADA206 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1961DE6EDF100ADA206 /* Helpers.swift */; };
+		A480B1991DE6EFBC00ADA206 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */; };
+		A480B19A1DE6EFC400ADA206 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8F1DE64B6000EE242A /* WebImage.framework */; };
+		A480B19B1DE6F23D00ADA206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4165F421DE63C4200EE242A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +77,7 @@
 /* Begin PBXFileReference section */
 		A4165F381DE63C4200EE242A /* VK Online.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK Online.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4165F3B1DE63C4200EE242A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A4165F3D1DE63C4200EE242A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A4165F3D1DE63C4200EE242A /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		A4165F401DE63C4200EE242A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4165F421DE63C4200EE242A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4165F451DE63C4200EE242A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,11 +89,16 @@
 		A4165F771DE63C9500EE242A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4165F7F1DE63E0300EE242A /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		A4165F821DE63FB400EE242A /* FriendsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsPresenter.swift; sourceTree = "<group>"; };
-		A4165F851DE63FD500EE242A /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
-		A4165F871DE6409000EE242A /* FriendsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsModule.swift; sourceTree = "<group>"; };
 		A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
 		A4165F8F1DE64B6000EE242A /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		A4165F921DE64BAA00EE242A /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		A464C46E1DE715F600C72EFE /* FriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
+		A464C4721DE71E8100C72EFE /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		A464C4741DE71EDD00C72EFE /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		A480B1911DE6EA7500ADA206 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		A480B1931DE6EA8500ADA206 /* VK Online.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VK Online.entitlements"; sourceTree = "<group>"; };
+		A480B1941DE6EAA100ADA206 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
+		A480B1961DE6EDF100ADA206 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +115,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A480B19A1DE6EFC400ADA206 /* WebImage.framework in Frameworks */,
 				A4165F701DE63C9500EE242A /* NotificationCenter.framework in Frameworks */,
+				A480B1991DE6EFBC00ADA206 /* VKSdkFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,12 +149,15 @@
 		A4165F3A1DE63C4200EE242A /* VK Online */ = {
 			isa = PBXGroup;
 			children = (
+				A480B1931DE6EA8500ADA206 /* VK Online.entitlements */,
 				A4165F3B1DE63C4200EE242A /* AppDelegate.swift */,
-				A4165F3D1DE63C4200EE242A /* ViewController.swift */,
+				A4165F3D1DE63C4200EE242A /* FriendsController.swift */,
 				A4165F3F1DE63C4200EE242A /* Main.storyboard */,
 				A4165F421DE63C4200EE242A /* Assets.xcassets */,
 				A4165F441DE63C4200EE242A /* LaunchScreen.storyboard */,
 				A4165F471DE63C4200EE242A /* Info.plist */,
+				A480B1911DE6EA7500ADA206 /* Storage.swift */,
+				A480B1961DE6EDF100ADA206 /* Helpers.swift */,
 			);
 			path = "VK Online";
 			sourceTree = "<group>";
@@ -151,7 +173,7 @@
 		A4165F711DE63C9500EE242A /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				A4165F841DE63FC700EE242A /* DI */,
+				A480B1941DE6EAA100ADA206 /* Widget.entitlements */,
 				A4165F811DE63F8300EE242A /* Friends  */,
 				A4165F741DE63C9500EE242A /* MainInterface.storyboard */,
 				A4165F771DE63C9500EE242A /* Info.plist */,
@@ -162,20 +184,30 @@
 		A4165F811DE63F8300EE242A /* Friends  */ = {
 			isa = PBXGroup;
 			children = (
-				A4165F7F1DE63E0300EE242A /* FriendCell.swift */,
+				A464C4771DE71EE200C72EFE /* HeaderView */,
+				A464C4701DE7161A00C72EFE /* Friend Cell */,
 				A4165F721DE63C9500EE242A /* FriendsViewController.swift */,
 				A4165F821DE63FB400EE242A /* FriendsPresenter.swift */,
 			);
 			name = "Friends ";
 			sourceTree = "<group>";
 		};
-		A4165F841DE63FC700EE242A /* DI */ = {
+		A464C4701DE7161A00C72EFE /* Friend Cell */ = {
 			isa = PBXGroup;
 			children = (
-				A4165F851DE63FD500EE242A /* ServiceLocator.swift */,
-				A4165F871DE6409000EE242A /* FriendsModule.swift */,
+				A4165F7F1DE63E0300EE242A /* FriendCell.swift */,
+				A464C46E1DE715F600C72EFE /* FriendCell.xib */,
 			);
-			name = DI;
+			name = "Friend Cell";
+			sourceTree = "<group>";
+		};
+		A464C4771DE71EE200C72EFE /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				A464C4741DE71EDD00C72EFE /* HeaderView.swift */,
+				A464C4721DE71E8100C72EFE /* HeaderView.xib */,
+			);
+			name = HeaderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +265,9 @@
 						DevelopmentTeam = 3EZN9G7JS8;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -242,6 +277,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3EZN9G7JS8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -269,7 +309,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A464C4711DE7163300C72EFE /* FriendCell.xib in Resources */,
 				A4165F461DE63C4200EE242A /* LaunchScreen.storyboard in Resources */,
+				A464C46D1DE715A400C72EFE /* MainInterface.storyboard in Resources */,
+				A464C4781DE7209100C72EFE /* HeaderView.xib in Resources */,
 				A4165F431DE63C4200EE242A /* Assets.xcassets in Resources */,
 				A4165F411DE63C4200EE242A /* Main.storyboard in Resources */,
 			);
@@ -279,7 +322,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A480B19B1DE6F23D00ADA206 /* Assets.xcassets in Resources */,
+				A464C46F1DE715F600C72EFE /* FriendCell.xib in Resources */,
 				A4165F761DE63C9500EE242A /* MainInterface.storyboard in Resources */,
+				A464C4731DE71E8100C72EFE /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,8 +336,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4165F3E1DE63C4200EE242A /* ViewController.swift in Sources */,
+				A4165F3E1DE63C4200EE242A /* FriendsController.swift in Sources */,
+				A464C4751DE71EDD00C72EFE /* HeaderView.swift in Sources */,
 				A4165F3C1DE63C4200EE242A /* AppDelegate.swift in Sources */,
+				A480B1921DE6EA7500ADA206 /* Storage.swift in Sources */,
+				A480B1971DE6EDF100ADA206 /* Helpers.swift in Sources */,
+				A480B1951DE6ED9500ADA206 /* FriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,11 +349,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4165F861DE63FD500EE242A /* ServiceLocator.swift in Sources */,
+				A464C4761DE71EDD00C72EFE /* HeaderView.swift in Sources */,
 				A4165F731DE63C9500EE242A /* FriendsViewController.swift in Sources */,
-				A4165F881DE6409000EE242A /* FriendsModule.swift in Sources */,
 				A4165F801DE63E0300EE242A /* FriendCell.swift in Sources */,
 				A4165F831DE63FB400EE242A /* FriendsPresenter.swift in Sources */,
+				A480B1981DE6EE1500ADA206 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +493,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "VK Online/VK Online.entitlements";
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,6 +512,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "VK Online/VK Online.entitlements";
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -477,26 +529,38 @@
 		A4165F7C1DE63C9500EE242A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online.Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A4165F7D1DE63C9500EE242A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online.Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -519,6 +583,7 @@
 				A4165F621DE63C4200EE242A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4165F7B1DE63C9500EE242A /* Build configuration list for PBXNativeTarget "Widget" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +592,7 @@
 				A4165F7D1DE63C9500EE242A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

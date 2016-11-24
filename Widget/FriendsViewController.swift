@@ -16,13 +16,18 @@ final class FriendsViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NCWidgetController
+        self.tableView.registerCellNib(type: FriendCell.self)
         self.tableView.dataSource = self.presenter
         self.tableView.delegate = self.presenter
     }
     
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
         return UIEdgeInsets.zero
+    }
+    
+    @nonobjc func widgetPerformUpdate(completionHandler: ((NCUpdateResult) -> Void)) {
+        NSLog("Fetched")
+        completionHandler(NCUpdateResult.newData)
     }
     
     override func didReceiveMemoryWarning() {
