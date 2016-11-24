@@ -12,26 +12,55 @@
 		A4165F411DE63C4200EE242A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F3F1DE63C4200EE242A /* Main.storyboard */; };
 		A4165F431DE63C4200EE242A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4165F421DE63C4200EE242A /* Assets.xcassets */; };
 		A4165F461DE63C4200EE242A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F441DE63C4200EE242A /* LaunchScreen.storyboard */; };
-		A4165F511DE63C4200EE242A /* VK_OnlineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F501DE63C4200EE242A /* VK_OnlineTests.swift */; };
-		A4165F5C1DE63C4200EE242A /* VK_OnlineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F5B1DE63C4200EE242A /* VK_OnlineUITests.swift */; };
+		A4165F701DE63C9500EE242A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F6F1DE63C9500EE242A /* NotificationCenter.framework */; };
+		A4165F731DE63C9500EE242A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F721DE63C9500EE242A /* FriendsViewController.swift */; };
+		A4165F761DE63C9500EE242A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F741DE63C9500EE242A /* MainInterface.storyboard */; };
+		A4165F7A1DE63C9500EE242A /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A4165F6D1DE63C9500EE242A /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A4165F801DE63E0300EE242A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F7F1DE63E0300EE242A /* FriendCell.swift */; };
+		A4165F831DE63FB400EE242A /* FriendsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F821DE63FB400EE242A /* FriendsPresenter.swift */; };
+		A4165F861DE63FD500EE242A /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F851DE63FD500EE242A /* ServiceLocator.swift */; };
+		A4165F881DE6409000EE242A /* FriendsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F871DE6409000EE242A /* FriendsModule.swift */; };
+		A4165F8C1DE64B5000EE242A /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */; };
+		A4165F8D1DE64B5000EE242A /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A4165F901DE64B6000EE242A /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8F1DE64B6000EE242A /* WebImage.framework */; };
+		A4165F911DE64B6000EE242A /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8F1DE64B6000EE242A /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A4165F4D1DE63C4200EE242A /* PBXContainerItemProxy */ = {
+		A4165F781DE63C9500EE242A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A4165F301DE63C4100EE242A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A4165F371DE63C4200EE242A;
-			remoteInfo = "VK Online";
-		};
-		A4165F581DE63C4200EE242A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4165F301DE63C4100EE242A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4165F371DE63C4200EE242A;
-			remoteInfo = "VK Online";
+			remoteGlobalIDString = A4165F6C1DE63C9500EE242A;
+			remoteInfo = Widget;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A4165F7E1DE63C9500EE242A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A4165F7A1DE63C9500EE242A /* Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4165F8E1DE64B5000EE242A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A4165F8D1DE64B5000EE242A /* VKSdkFramework.framework in Embed Frameworks */,
+				A4165F911DE64B6000EE242A /* WebImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A4165F381DE63C4200EE242A /* VK Online.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK Online.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,12 +70,18 @@
 		A4165F421DE63C4200EE242A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4165F451DE63C4200EE242A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4165F471DE63C4200EE242A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4165F4C1DE63C4200EE242A /* VK OnlineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VK OnlineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4165F501DE63C4200EE242A /* VK_OnlineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK_OnlineTests.swift; sourceTree = "<group>"; };
-		A4165F521DE63C4200EE242A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4165F571DE63C4200EE242A /* VK OnlineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VK OnlineUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4165F5B1DE63C4200EE242A /* VK_OnlineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK_OnlineUITests.swift; sourceTree = "<group>"; };
-		A4165F5D1DE63C4200EE242A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4165F6D1DE63C9500EE242A /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4165F6F1DE63C9500EE242A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		A4165F721DE63C9500EE242A /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		A4165F751DE63C9500EE242A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A4165F771DE63C9500EE242A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4165F7F1DE63E0300EE242A /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		A4165F821DE63FB400EE242A /* FriendsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsPresenter.swift; sourceTree = "<group>"; };
+		A4165F851DE63FD500EE242A /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		A4165F871DE6409000EE242A /* FriendsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsModule.swift; sourceTree = "<group>"; };
+		A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
+		A4165F8F1DE64B6000EE242A /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
+		A4165F921DE64BAA00EE242A /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,20 +89,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4165F8C1DE64B5000EE242A /* VKSdkFramework.framework in Frameworks */,
+				A4165F901DE64B6000EE242A /* WebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4165F491DE63C4200EE242A /* Frameworks */ = {
+		A4165F6A1DE63C9500EE242A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4165F541DE63C4200EE242A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				A4165F701DE63C9500EE242A /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,9 +108,12 @@
 		A4165F2F1DE63C4100EE242A = {
 			isa = PBXGroup;
 			children = (
+				A4165F921DE64BAA00EE242A /* Header.h */,
+				A4165F8F1DE64B6000EE242A /* WebImage.framework */,
+				A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */,
 				A4165F3A1DE63C4200EE242A /* VK Online */,
-				A4165F4F1DE63C4200EE242A /* VK OnlineTests */,
-				A4165F5A1DE63C4200EE242A /* VK OnlineUITests */,
+				A4165F711DE63C9500EE242A /* Widget */,
+				A4165F6E1DE63C9500EE242A /* Frameworks */,
 				A4165F391DE63C4200EE242A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				A4165F381DE63C4200EE242A /* VK Online.app */,
-				A4165F4C1DE63C4200EE242A /* VK OnlineTests.xctest */,
-				A4165F571DE63C4200EE242A /* VK OnlineUITests.xctest */,
+				A4165F6D1DE63C9500EE242A /* Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,22 +140,42 @@
 			path = "VK Online";
 			sourceTree = "<group>";
 		};
-		A4165F4F1DE63C4200EE242A /* VK OnlineTests */ = {
+		A4165F6E1DE63C9500EE242A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A4165F501DE63C4200EE242A /* VK_OnlineTests.swift */,
-				A4165F521DE63C4200EE242A /* Info.plist */,
+				A4165F6F1DE63C9500EE242A /* NotificationCenter.framework */,
 			);
-			path = "VK OnlineTests";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A4165F5A1DE63C4200EE242A /* VK OnlineUITests */ = {
+		A4165F711DE63C9500EE242A /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				A4165F5B1DE63C4200EE242A /* VK_OnlineUITests.swift */,
-				A4165F5D1DE63C4200EE242A /* Info.plist */,
+				A4165F841DE63FC700EE242A /* DI */,
+				A4165F811DE63F8300EE242A /* Friends  */,
+				A4165F741DE63C9500EE242A /* MainInterface.storyboard */,
+				A4165F771DE63C9500EE242A /* Info.plist */,
 			);
-			path = "VK OnlineUITests";
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		A4165F811DE63F8300EE242A /* Friends  */ = {
+			isa = PBXGroup;
+			children = (
+				A4165F7F1DE63E0300EE242A /* FriendCell.swift */,
+				A4165F721DE63C9500EE242A /* FriendsViewController.swift */,
+				A4165F821DE63FB400EE242A /* FriendsPresenter.swift */,
+			);
+			name = "Friends ";
+			sourceTree = "<group>";
+		};
+		A4165F841DE63FC700EE242A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				A4165F851DE63FD500EE242A /* ServiceLocator.swift */,
+				A4165F871DE6409000EE242A /* FriendsModule.swift */,
+			);
+			name = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,51 +188,35 @@
 				A4165F341DE63C4200EE242A /* Sources */,
 				A4165F351DE63C4200EE242A /* Frameworks */,
 				A4165F361DE63C4200EE242A /* Resources */,
+				A4165F7E1DE63C9500EE242A /* Embed App Extensions */,
+				A4165F8E1DE64B5000EE242A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A4165F791DE63C9500EE242A /* PBXTargetDependency */,
 			);
 			name = "VK Online";
 			productName = "VK Online";
 			productReference = A4165F381DE63C4200EE242A /* VK Online.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A4165F4B1DE63C4200EE242A /* VK OnlineTests */ = {
+		A4165F6C1DE63C9500EE242A /* Widget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4165F631DE63C4200EE242A /* Build configuration list for PBXNativeTarget "VK OnlineTests" */;
+			buildConfigurationList = A4165F7B1DE63C9500EE242A /* Build configuration list for PBXNativeTarget "Widget" */;
 			buildPhases = (
-				A4165F481DE63C4200EE242A /* Sources */,
-				A4165F491DE63C4200EE242A /* Frameworks */,
-				A4165F4A1DE63C4200EE242A /* Resources */,
+				A4165F691DE63C9500EE242A /* Sources */,
+				A4165F6A1DE63C9500EE242A /* Frameworks */,
+				A4165F6B1DE63C9500EE242A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A4165F4E1DE63C4200EE242A /* PBXTargetDependency */,
 			);
-			name = "VK OnlineTests";
-			productName = "VK OnlineTests";
-			productReference = A4165F4C1DE63C4200EE242A /* VK OnlineTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A4165F561DE63C4200EE242A /* VK OnlineUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4165F661DE63C4200EE242A /* Build configuration list for PBXNativeTarget "VK OnlineUITests" */;
-			buildPhases = (
-				A4165F531DE63C4200EE242A /* Sources */,
-				A4165F541DE63C4200EE242A /* Frameworks */,
-				A4165F551DE63C4200EE242A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A4165F591DE63C4200EE242A /* PBXTargetDependency */,
-			);
-			name = "VK OnlineUITests";
-			productName = "VK OnlineUITests";
-			productReference = A4165F571DE63C4200EE242A /* VK OnlineUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = Widget;
+			productName = Widget;
+			productReference = A4165F6D1DE63C9500EE242A /* Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -195,18 +232,16 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3EZN9G7JS8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
-					A4165F4B1DE63C4200EE242A = {
+					A4165F6C1DE63C9500EE242A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3EZN9G7JS8;
 						ProvisioningStyle = Automatic;
-						TestTargetID = A4165F371DE63C4200EE242A;
-					};
-					A4165F561DE63C4200EE242A = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 3EZN9G7JS8;
-						ProvisioningStyle = Automatic;
-						TestTargetID = A4165F371DE63C4200EE242A;
 					};
 				};
 			};
@@ -224,8 +259,7 @@
 			projectRoot = "";
 			targets = (
 				A4165F371DE63C4200EE242A /* VK Online */,
-				A4165F4B1DE63C4200EE242A /* VK OnlineTests */,
-				A4165F561DE63C4200EE242A /* VK OnlineUITests */,
+				A4165F6C1DE63C9500EE242A /* Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -241,17 +275,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4165F4A1DE63C4200EE242A /* Resources */ = {
+		A4165F6B1DE63C9500EE242A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4165F551DE63C4200EE242A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				A4165F761DE63C9500EE242A /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,34 +295,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4165F481DE63C4200EE242A /* Sources */ = {
+		A4165F691DE63C9500EE242A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4165F511DE63C4200EE242A /* VK_OnlineTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4165F531DE63C4200EE242A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4165F5C1DE63C4200EE242A /* VK_OnlineUITests.swift in Sources */,
+				A4165F861DE63FD500EE242A /* ServiceLocator.swift in Sources */,
+				A4165F731DE63C9500EE242A /* FriendsViewController.swift in Sources */,
+				A4165F881DE6409000EE242A /* FriendsModule.swift in Sources */,
+				A4165F801DE63E0300EE242A /* FriendCell.swift in Sources */,
+				A4165F831DE63FB400EE242A /* FriendsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A4165F4E1DE63C4200EE242A /* PBXTargetDependency */ = {
+		A4165F791DE63C9500EE242A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A4165F371DE63C4200EE242A /* VK Online */;
-			targetProxy = A4165F4D1DE63C4200EE242A /* PBXContainerItemProxy */;
-		};
-		A4165F591DE63C4200EE242A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4165F371DE63C4200EE242A /* VK Online */;
-			targetProxy = A4165F581DE63C4200EE242A /* PBXContainerItemProxy */;
+			target = A4165F6C1DE63C9500EE242A /* Widget */;
+			targetProxy = A4165F781DE63C9500EE242A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -313,6 +332,14 @@
 				A4165F451DE63C4200EE242A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A4165F741DE63C9500EE242A /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4165F751DE63C9500EE242A /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -358,7 +385,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -402,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -414,8 +441,13 @@
 		A4165F611DE63C4200EE242A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "VK Online/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online";
@@ -427,8 +459,13 @@
 		A4165F621DE63C4200EE242A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "VK Online/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online";
@@ -437,61 +474,29 @@
 			};
 			name = Release;
 		};
-		A4165F641DE63C4200EE242A /* Debug */ = {
+		A4165F7C1DE63C9500EE242A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
-				INFOPLIST_FILE = "VK OnlineTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-OnlineTests";
+				INFOPLIST_FILE = Widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online.Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VK Online.app/VK Online";
 			};
 			name = Debug;
 		};
-		A4165F651DE63C4200EE242A /* Release */ = {
+		A4165F7D1DE63C9500EE242A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
-				INFOPLIST_FILE = "VK OnlineTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-OnlineTests";
+				INFOPLIST_FILE = Widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online.Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VK Online.app/VK Online";
-			};
-			name = Release;
-		};
-		A4165F671DE63C4200EE242A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 3EZN9G7JS8;
-				INFOPLIST_FILE = "VK OnlineUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-OnlineUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "VK Online";
-			};
-			name = Debug;
-		};
-		A4165F681DE63C4200EE242A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 3EZN9G7JS8;
-				INFOPLIST_FILE = "VK OnlineUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-OnlineUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "VK Online";
 			};
 			name = Release;
 		};
@@ -515,19 +520,11 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		A4165F631DE63C4200EE242A /* Build configuration list for PBXNativeTarget "VK OnlineTests" */ = {
+		A4165F7B1DE63C9500EE242A /* Build configuration list for PBXNativeTarget "Widget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A4165F641DE63C4200EE242A /* Debug */,
-				A4165F651DE63C4200EE242A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		A4165F661DE63C4200EE242A /* Build configuration list for PBXNativeTarget "VK OnlineUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4165F671DE63C4200EE242A /* Debug */,
-				A4165F681DE63C4200EE242A /* Release */,
+				A4165F7C1DE63C9500EE242A /* Debug */,
+				A4165F7D1DE63C9500EE242A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
