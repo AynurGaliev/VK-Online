@@ -13,6 +13,7 @@ import NotificationCenter
 final class FriendsController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -21,7 +22,8 @@ final class FriendsController: UIViewController {
         return refreshControl
     }()
     
-    fileprivate var friends: [String:[VKUser]] = [:]
+    fileprivate var friends: [String:[User]] = [:]
+    fileprivate var watchedFriends: [String:[User]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,12 @@ final class FriendsController: UIViewController {
         self.tableView.registerHeaderNib(type: HeaderView.self)
         self.tableView.sectionIndexColor = UIColor.darkGray
         self.tableView.addSubview(self.refreshControl)
+    }
+    
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        let users: [User] = Storage.shared.get()
+        self.categorise(users: users)
+        self.tableView.reloadData()
     }
     
     func authStateChanged(sender: Notification) {
@@ -56,31 +64,62 @@ final class FriendsController: UIViewController {
             guard let JSON = response?.json as? Dictionary<String, Any> else { return }
             guard let usersArray = VKUsersArray(dictionary: JSON) else { return }
             let array = usersArray.items.map { $0 as! VKUser }
-            Storage.shared.set(object: array)
-            self.categorise(users: array)
+            
+            let prevStateArray: [User] = Storage.shared.get()
+            
+            let mappedArray: [User] = array.map({ (vkUser) -> User in
+            
+                let user = User(user: vkUser)
+                
+                if let index = prevStateArray.index(where: { (currentItem) -> Bool in
+                    return vkUser.id == currentItem.user.id
+                })
+                {
+                    guard let prevOnline = prevStateArray[index].online else { return user }
+                    user.user.online = prevOnline
+                }
+                return user
+            })
+
+            Storage.shared.set(object: mappedArray)
+            self.categorise(users: mappedArray)
             
         }, errorBlock: { (error) in
             debugPrint("Fail to perform request")
         })
     }
     
-    func categorise(users array: [VKUser]) {
+    func categorise(users array: [User]) {
         
         self.friends = [:]
         
-        array.forEach { (user: VKUser) in
+        array.forEach { (user: User) in
             
-            let firstSymbol = user.last_name.lowercased().substring(with: 0..<1)
+            let firstSymbol = user.user.last_name.lowercased().substring(with: 0..<1)
             
             if let users = self.friends[firstSymbol] {
                 var newUsers = Array(users)
                 newUsers.append(user)
                 newUsers.sort(by: { (left, right) -> Bool in
-                    return left.last_name > right.last_name
+                    return left.user.last_name > right.user.last_name
                 })
                 self.friends[firstSymbol] = newUsers
             } else {
                 self.friends[firstSymbol] = [user]
+            }
+            
+            if user.isWatching {
+            
+                if let users = self.watchedFriends[firstSymbol] {
+                    var newUsers = Array(users)
+                    newUsers.append(user)
+                    newUsers.sort(by: { (left, right) -> Bool in
+                        return left.user.last_name > right.user.last_name
+                    })
+                    self.watchedFriends[firstSymbol] = newUsers
+                } else {
+                    self.watchedFriends[firstSymbol] = [user]
+                }
             }
         }
         
@@ -96,6 +135,12 @@ final class FriendsController: UIViewController {
         return keys.sorted()
     }
     
+    var watchedSortedKeys: [String] {
+        let keys = Array(self.watchedFriends.keys)
+        return keys.sorted()
+    }
+    
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -108,34 +153,66 @@ final class FriendsController: UIViewController {
 extension FriendsController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.friends.keys.count
+        if self.segmentControl.selectedSegmentIndex == 0 {
+            return self.friends.keys.count
+        } else {
+            return self.watchedFriends.keys.count
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let key = self.sortedKeys[section]
-        return self.friends[key]?.count ?? 0
+        if self.segmentControl.selectedSegmentIndex == 0 {
+            let key = self.sortedKeys[section]
+            return self.friends[key]?.count ?? 0
+        } else {
+            let key = self.watchedSortedKeys[section]
+            return self.watchedFriends[key]?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell: FriendCell = tableView.dequeCell()
-        let key = self.sortedKeys[indexPath.section]
-        if let users = self.friends[key] {
-           cell.prepareCell(user: users[indexPath.row])
+        
+        if self.segmentControl.selectedSegmentIndex == 0 {
+            let key = self.sortedKeys[indexPath.section]
+            if let users = self.friends[key] {
+                cell.prepareCell(user: users[indexPath.row])
+            }
+        } else {
+            let key = self.watchedSortedKeys[indexPath.section]
+            if let users = self.watchedFriends[key] {
+                cell.prepareCell(user: users[indexPath.row])
+            }
         }
+        
         return cell
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return self.sortedKeys.map { $0.uppercased() }
+        if self.segmentControl.selectedSegmentIndex == 0 {
+            return self.sortedKeys.map { $0.uppercased() }
+        } else {
+            return self.watchedSortedKeys.map { $0.uppercased() }
+        }
     }
 }
 
 extension FriendsController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let key = self.sortedKeys[section]
-        guard let users = self.friends[key], users.count > 0 else { return nil }
+        
         let view: HeaderView = tableView.dequeHeader()
+        
+        var key: String = ""
+        if self.segmentControl.selectedSegmentIndex == 0 {
+            key = self.sortedKeys[section]
+            guard let users = self.friends[key], users.count > 0 else { return nil }
+        } else {
+            key = self.watchedSortedKeys[section]
+            guard let users = self.watchedFriends[key], users.count > 0 else { return nil }
+        }
+        
         view.label.text = key.uppercased()
         return view
     }

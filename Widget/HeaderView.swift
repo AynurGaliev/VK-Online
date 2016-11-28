@@ -12,4 +12,8 @@ final class HeaderView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var label: UILabel!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.backgroundView = UIView.init()
+    }
 }

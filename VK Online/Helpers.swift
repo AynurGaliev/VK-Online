@@ -98,6 +98,26 @@ extension NSObject: XibSupport {
 }
 
 extension UITableView {
+    
+    override open var contentInset: UIEdgeInsets {
+        
+        set(newValue) {
+            
+            if self.isTracking {
+                let difference = newValue.top - self.contentInset.top
+                var translation = self.panGestureRecognizer.translation(in: self)
+                translation.y -= difference*1.45
+                self.panGestureRecognizer.setTranslation(translation, in: self)
+            }
+            super.contentInset = newValue
+        }
+        get {
+            return super.contentInset
+        }
+    }
+}
+
+extension UITableView {
 
     //MARK: -
     func registerCellClass<T: UITableViewCell>(type: T.Type) {

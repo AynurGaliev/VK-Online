@@ -11,6 +11,8 @@ import VKSdkFramework
 
 enum StorageKeys: String {
     case users = "users"
+    case lastUpdate = "lastUpdate"
+    case watchIDs = "watchIDs"
 }
 
 final class Storage {
@@ -23,23 +25,49 @@ final class Storage {
     
     static let shared: Storage = Storage()
     
-    func set(object: [VKUser]) {
-        let users = object.map { User(user: $0) }
-        self.defaults.set(NSKeyedArchiver.archivedData(withRootObject: users), forKey: StorageKeys.users.rawValue)
+    //Last update
+    func set(lastUpdate: Date) {
+        self.defaults.set(NSKeyedArchiver.archivedData(withRootObject: lastUpdate),
+                          forKey: StorageKeys.lastUpdate.rawValue)
         self.defaults.synchronize()
     }
     
-    func get() -> [VKUser] {
+    func get() -> Date? {
+        guard let date = self.defaults.value(forKey: StorageKeys.lastUpdate.rawValue) as? Date else { return nil }
+        return date
+    }
+    
+    //Watched users
+    func set(ids: [String]) {
+        self.defaults.set(NSKeyedArchiver.archivedData(withRootObject: ids),
+                          forKey: StorageKeys.watchIDs.rawValue)
+        self.defaults.synchronize()
+    }
+    
+    func get() -> [String] {
+        guard let IDs = self.defaults.value(forKey: StorageKeys.watchIDs.rawValue) as? [String] else { return [] }
+        return IDs
+    }
+    
+    //Users
+    func set(object: [User]) {
+        self.defaults.set(NSKeyedArchiver.archivedData(withRootObject: object),
+                          forKey: StorageKeys.users.rawValue)
+        self.defaults.synchronize()
+    }
+    
+    func get() -> [User] {
         guard let data = self.defaults.value(forKey: StorageKeys.users.rawValue) as? Data else { return [] }
         guard let users = NSKeyedUnarchiver.unarchiveObject(with: data) as? [User] else { return [] }
-        return users.map { $0.user }
+        return users.map { $0 }
     }
 }
 
 
 final class User: VKUser, NSCoding {
     
-    fileprivate var user: VKUser = VKUser()
+    private(set) var user: VKUser = VKUser()
+    var isWatching: Bool = false
     
     init(user: VKUser) {
         self.user = user
@@ -47,6 +75,8 @@ final class User: VKUser, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.isWatching, forKey: "isWatching")
+        aCoder.encode(self.user.id, forKey: "id")
         aCoder.encode(self.user.last_name, forKey: "last_name")
         aCoder.encode(self.user.first_name, forKey: "first_name")
         aCoder.encode(self.user.photo_100, forKey: "photo_100")
@@ -55,6 +85,8 @@ final class User: VKUser, NSCoding {
     }
     
     init?(coder aDecoder: NSCoder) {
+        self.isWatching = aDecoder.decodeBool(forKey: "isWatching")
+        self.user.id = aDecoder.decodeObject(forKey: "id") as? NSNumber
         self.user.last_name = aDecoder.decodeObject(forKey: "last_name") as? String
         self.user.first_name = aDecoder.decodeObject(forKey: "first_name") as? String
         self.user.photo_100 = aDecoder.decodeObject(forKey: "photo_100") as? String

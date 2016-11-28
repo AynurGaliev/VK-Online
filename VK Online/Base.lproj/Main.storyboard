@@ -26,6 +26,9 @@
                                     <segment title="Watched"/>
                                 </segments>
                                 <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="7Pq-yx-B2W"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C5G-uh-hIx">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,6 +51,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Friends" id="PHz-so-6Kv"/>
                     <connections>
+                        <outlet property="segmentControl" destination="VfB-VP-AZn" id="bU8-5X-I7g"/>
                         <outlet property="tableView" destination="C5G-uh-hIx" id="WNa-Mr-UTb"/>
                     </connections>
                 </viewController>

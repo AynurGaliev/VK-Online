@@ -12,41 +12,22 @@
 		A4165F411DE63C4200EE242A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F3F1DE63C4200EE242A /* Main.storyboard */; };
 		A4165F431DE63C4200EE242A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4165F421DE63C4200EE242A /* Assets.xcassets */; };
 		A4165F461DE63C4200EE242A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F441DE63C4200EE242A /* LaunchScreen.storyboard */; };
-		A4165F701DE63C9500EE242A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F6F1DE63C9500EE242A /* NotificationCenter.framework */; };
-		A4165F731DE63C9500EE242A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F721DE63C9500EE242A /* FriendsViewController.swift */; };
-		A4165F761DE63C9500EE242A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F741DE63C9500EE242A /* MainInterface.storyboard */; };
-		A4165F7A1DE63C9500EE242A /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A4165F6D1DE63C9500EE242A /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A4165F801DE63E0300EE242A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F7F1DE63E0300EE242A /* FriendCell.swift */; };
-		A4165F831DE63FB400EE242A /* FriendsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F821DE63FB400EE242A /* FriendsPresenter.swift */; };
 		A4165F8C1DE64B5000EE242A /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */; };
 		A4165F8D1DE64B5000EE242A /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4165F901DE64B6000EE242A /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8F1DE64B6000EE242A /* WebImage.framework */; };
 		A4165F911DE64B6000EE242A /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8F1DE64B6000EE242A /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A464C46D1DE715A400C72EFE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F741DE63C9500EE242A /* MainInterface.storyboard */; };
-		A464C46F1DE715F600C72EFE /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A464C46E1DE715F600C72EFE /* FriendCell.xib */; };
 		A464C4711DE7163300C72EFE /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A464C46E1DE715F600C72EFE /* FriendCell.xib */; };
-		A464C4731DE71E8100C72EFE /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A464C4721DE71E8100C72EFE /* HeaderView.xib */; };
 		A464C4751DE71EDD00C72EFE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464C4741DE71EDD00C72EFE /* HeaderView.swift */; };
-		A464C4761DE71EDD00C72EFE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464C4741DE71EDD00C72EFE /* HeaderView.swift */; };
 		A464C4781DE7209100C72EFE /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A464C4721DE71E8100C72EFE /* HeaderView.xib */; };
 		A480B1921DE6EA7500ADA206 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1911DE6EA7500ADA206 /* Storage.swift */; };
 		A480B1951DE6ED9500ADA206 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F7F1DE63E0300EE242A /* FriendCell.swift */; };
 		A480B1971DE6EDF100ADA206 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1961DE6EDF100ADA206 /* Helpers.swift */; };
-		A480B1981DE6EE1500ADA206 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1961DE6EDF100ADA206 /* Helpers.swift */; };
-		A480B1991DE6EFBC00ADA206 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */; };
-		A480B19A1DE6EFC400ADA206 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8F1DE64B6000EE242A /* WebImage.framework */; };
-		A480B19B1DE6F23D00ADA206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4165F421DE63C4200EE242A /* Assets.xcassets */; };
+		A4BA32B31DEB983D00B76FB6 /* BackgroundTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA32B21DEB983D00B76FB6 /* BackgroundTask.swift */; };
+		A4BED8331DEA37230000037B /* BackgroundUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BED8321DEA37230000037B /* BackgroundUpdater.swift */; };
+		A4CD5EA81DEB98B100D81C54 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CD5EA71DEB98B100D81C54 /* CoreAudio.framework */; };
+		A4CD5EAA1DEB9C5200D81C54 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CD5EA91DEB9C5200D81C54 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A4165F781DE63C9500EE242A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4165F301DE63C4100EE242A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4165F6C1DE63C9500EE242A;
-			remoteInfo = Widget;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A4165F7E1DE63C9500EE242A /* Embed App Extensions */ = {
@@ -55,7 +36,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A4165F7A1DE63C9500EE242A /* Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,7 +62,6 @@
 		A4165F421DE63C4200EE242A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4165F451DE63C4200EE242A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4165F471DE63C4200EE242A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4165F6D1DE63C9500EE242A /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4165F6F1DE63C9500EE242A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		A4165F721DE63C9500EE242A /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		A4165F751DE63C9500EE242A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -99,6 +78,10 @@
 		A480B1931DE6EA8500ADA206 /* VK Online.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VK Online.entitlements"; sourceTree = "<group>"; };
 		A480B1941DE6EAA100ADA206 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		A480B1961DE6EDF100ADA206 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		A4BA32B21DEB983D00B76FB6 /* BackgroundTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
+		A4BED8321DEA37230000037B /* BackgroundUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundUpdater.swift; sourceTree = "<group>"; };
+		A4CD5EA71DEB98B100D81C54 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		A4CD5EA91DEB9C5200D81C54 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,18 +89,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4CD5EAA1DEB9C5200D81C54 /* AVFoundation.framework in Frameworks */,
+				A4CD5EA81DEB98B100D81C54 /* CoreAudio.framework in Frameworks */,
 				A4165F8C1DE64B5000EE242A /* VKSdkFramework.framework in Frameworks */,
 				A4165F901DE64B6000EE242A /* WebImage.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4165F6A1DE63C9500EE242A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A480B19A1DE6EFC400ADA206 /* WebImage.framework in Frameworks */,
-				A4165F701DE63C9500EE242A /* NotificationCenter.framework in Frameworks */,
-				A480B1991DE6EFBC00ADA206 /* VKSdkFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				A4165F381DE63C4200EE242A /* VK Online.app */,
-				A4165F6D1DE63C9500EE242A /* Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +132,8 @@
 				A4165F471DE63C4200EE242A /* Info.plist */,
 				A480B1911DE6EA7500ADA206 /* Storage.swift */,
 				A480B1961DE6EDF100ADA206 /* Helpers.swift */,
+				A4BED8321DEA37230000037B /* BackgroundUpdater.swift */,
+				A4BA32B21DEB983D00B76FB6 /* BackgroundTask.swift */,
 			);
 			path = "VK Online";
 			sourceTree = "<group>";
@@ -165,6 +141,8 @@
 		A4165F6E1DE63C9500EE242A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4CD5EA91DEB9C5200D81C54 /* AVFoundation.framework */,
+				A4CD5EA71DEB98B100D81C54 /* CoreAudio.framework */,
 				A4165F6F1DE63C9500EE242A /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -226,29 +204,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				A4165F791DE63C9500EE242A /* PBXTargetDependency */,
 			);
 			name = "VK Online";
 			productName = "VK Online";
 			productReference = A4165F381DE63C4200EE242A /* VK Online.app */;
 			productType = "com.apple.product-type.application";
-		};
-		A4165F6C1DE63C9500EE242A /* Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4165F7B1DE63C9500EE242A /* Build configuration list for PBXNativeTarget "Widget" */;
-			buildPhases = (
-				A4165F691DE63C9500EE242A /* Sources */,
-				A4165F6A1DE63C9500EE242A /* Frameworks */,
-				A4165F6B1DE63C9500EE242A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Widget;
-			productName = Widget;
-			productReference = A4165F6D1DE63C9500EE242A /* Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -273,16 +233,6 @@
 							};
 						};
 					};
-					A4165F6C1DE63C9500EE242A = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 3EZN9G7JS8;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
 				};
 			};
 			buildConfigurationList = A4165F331DE63C4100EE242A /* Build configuration list for PBXProject "VK Online" */;
@@ -299,7 +249,6 @@
 			projectRoot = "";
 			targets = (
 				A4165F371DE63C4200EE242A /* VK Online */,
-				A4165F6C1DE63C9500EE242A /* Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -318,17 +267,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4165F6B1DE63C9500EE242A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A480B19B1DE6F23D00ADA206 /* Assets.xcassets in Resources */,
-				A464C46F1DE715F600C72EFE /* FriendCell.xib in Resources */,
-				A4165F761DE63C9500EE242A /* MainInterface.storyboard in Resources */,
-				A464C4731DE71E8100C72EFE /* HeaderView.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -338,34 +276,16 @@
 			files = (
 				A4165F3E1DE63C4200EE242A /* FriendsController.swift in Sources */,
 				A464C4751DE71EDD00C72EFE /* HeaderView.swift in Sources */,
+				A4BA32B31DEB983D00B76FB6 /* BackgroundTask.swift in Sources */,
 				A4165F3C1DE63C4200EE242A /* AppDelegate.swift in Sources */,
 				A480B1921DE6EA7500ADA206 /* Storage.swift in Sources */,
 				A480B1971DE6EDF100ADA206 /* Helpers.swift in Sources */,
 				A480B1951DE6ED9500ADA206 /* FriendCell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4165F691DE63C9500EE242A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A464C4761DE71EDD00C72EFE /* HeaderView.swift in Sources */,
-				A4165F731DE63C9500EE242A /* FriendsViewController.swift in Sources */,
-				A4165F801DE63E0300EE242A /* FriendCell.swift in Sources */,
-				A4165F831DE63FB400EE242A /* FriendsPresenter.swift in Sources */,
-				A480B1981DE6EE1500ADA206 /* Helpers.swift in Sources */,
+				A4BED8331DEA37230000037B /* BackgroundUpdater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A4165F791DE63C9500EE242A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4165F6C1DE63C9500EE242A /* Widget */;
-			targetProxy = A4165F781DE63C9500EE242A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A4165F3F1DE63C4200EE242A /* Main.storyboard */ = {
@@ -526,44 +446,6 @@
 			};
 			name = Release;
 		};
-		A4165F7C1DE63C9500EE242A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				DEVELOPMENT_TEAM = 3EZN9G7JS8;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Widget/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online.Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		A4165F7D1DE63C9500EE242A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				DEVELOPMENT_TEAM = 3EZN9G7JS8;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Widget/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online.Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,15 +463,6 @@
 			buildConfigurations = (
 				A4165F611DE63C4200EE242A /* Debug */,
 				A4165F621DE63C4200EE242A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4165F7B1DE63C9500EE242A /* Build configuration list for PBXNativeTarget "Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4165F7C1DE63C9500EE242A /* Debug */,
-				A4165F7D1DE63C9500EE242A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
