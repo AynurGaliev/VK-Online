@@ -31,12 +31,6 @@
                             <constraint firstAttribute="height" constant="1" id="885-Vd-tDf"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online_mobile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="L00-tj-zUq">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="8" id="Sts-0g-XXj"/>
-                            <constraint firstAttribute="height" constant="16" id="gyh-WM-vZP"/>
-                        </constraints>
-                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvr-FN-SRg">
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="tintColor" red="0.36470588240000001" green="0.53725490200000003" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,20 +39,26 @@
                             <action selector="watchAction:" destination="8a4-Dh-aKz" eventType="touchUpInside" id="34M-zb-QD0"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online_mobile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="L00-tj-zUq">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="nJd-rJ-glk"/>
+                            <constraint firstAttribute="width" constant="8" id="rSk-hz-pCs"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstItem="L00-tj-zUq" firstAttribute="centerY" secondItem="8yh-iH-pNc" secondAttribute="centerY" id="1gc-9j-eVG"/>
                     <constraint firstAttribute="trailing" secondItem="WjY-lY-qtE" secondAttribute="trailing" id="9cH-VB-AY6"/>
                     <constraint firstItem="Cvr-FN-SRg" firstAttribute="centerY" secondItem="8yh-iH-pNc" secondAttribute="centerY" id="AnQ-Tc-12T"/>
-                    <constraint firstItem="L00-tj-zUq" firstAttribute="leading" secondItem="Cvr-FN-SRg" secondAttribute="trailing" constant="8" id="EY7-hL-Dod"/>
+                    <constraint firstItem="L00-tj-zUq" firstAttribute="leading" secondItem="8yh-iH-pNc" secondAttribute="trailing" constant="4" id="FDI-nq-tYN"/>
                     <constraint firstItem="1Rs-85-4RO" firstAttribute="centerY" secondItem="cah-1q-5Ob" secondAttribute="centerY" id="JL9-J8-cNR"/>
-                    <constraint firstItem="L00-tj-zUq" firstAttribute="centerY" secondItem="cah-1q-5Ob" secondAttribute="centerY" id="LYv-p9-k0t"/>
                     <constraint firstItem="8yh-iH-pNc" firstAttribute="leading" secondItem="1Rs-85-4RO" secondAttribute="trailing" constant="8" id="Muh-rH-Ovb"/>
                     <constraint firstItem="1Rs-85-4RO" firstAttribute="leading" secondItem="cah-1q-5Ob" secondAttribute="leading" constant="10" id="Nec-xz-WIo"/>
-                    <constraint firstAttribute="trailing" secondItem="L00-tj-zUq" secondAttribute="trailing" constant="10" id="PXP-fH-b6M"/>
+                    <constraint firstAttribute="trailing" secondItem="Cvr-FN-SRg" secondAttribute="trailing" constant="8" id="QYc-Wo-kY8"/>
                     <constraint firstAttribute="bottom" secondItem="WjY-lY-qtE" secondAttribute="bottom" id="R9F-pc-kSm"/>
+                    <constraint firstItem="Cvr-FN-SRg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="L00-tj-zUq" secondAttribute="trailing" constant="8" id="X6w-fu-7Rw"/>
                     <constraint firstItem="8yh-iH-pNc" firstAttribute="centerY" secondItem="1Rs-85-4RO" secondAttribute="centerY" id="jk7-Lw-AUq"/>
-                    <constraint firstItem="Cvr-FN-SRg" firstAttribute="leading" secondItem="8yh-iH-pNc" secondAttribute="trailing" constant="8" id="rkG-ke-yYq"/>
                     <constraint firstItem="WjY-lY-qtE" firstAttribute="leading" secondItem="cah-1q-5Ob" secondAttribute="leading" constant="51" id="v4o-U5-wLd"/>
                 </constraints>
             </tableViewCellContentView>
@@ -66,9 +66,8 @@
                 <outlet property="avatarImageView" destination="1Rs-85-4RO" id="4UL-uS-9IO"/>
                 <outlet property="nameLabel" destination="8yh-iH-pNc" id="jKu-9Q-E0q"/>
                 <outlet property="onlineImageView" destination="L00-tj-zUq" id="xuy-SG-kqZ"/>
-                <outlet property="onlineImageViewHeightConstraint" destination="gyh-WM-vZP" id="uWy-Ne-SxY"/>
-                <outlet property="onlineImageViewLeftMarginConstraint" destination="EY7-hL-Dod" id="yZ7-8v-oww"/>
-                <outlet property="onlineImageViewWidthConstraint" destination="Sts-0g-XXj" id="Z38-48-luq"/>
+                <outlet property="onlineImageViewHeightConstraint" destination="nJd-rJ-glk" id="rl0-hO-X3w"/>
+                <outlet property="onlineImageViewWidthConstraint" destination="rSk-hz-pCs" id="Bsg-Wf-Mna"/>
                 <outlet property="watchButton" destination="Cvr-FN-SRg" id="V5f-7Y-6wp"/>
             </connections>
             <point key="canvasLocation" x="2" y="-14"/>

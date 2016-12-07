@@ -24,24 +24,78 @@ final class FriendsController: UIViewController {
     
     fileprivate var friends: [String:[User]] = [:]
     fileprivate var watchedFriends: [String:[User]] = [:]
+    var task: BackgroundTask? = nil
+    var timer: Timer?
+    var titleView: TitleView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let users: [User] = Storage.shared.get()
+        self.categorise(users: users)
+        
+        self.titleView = Bundle.main.loadNibNamed("TitleView", owner: nil, options: nil)!.first! as! TitleView
+        self.titleView.sizeToFit()
+        self.navigationItem.titleView = self.titleView
+        
+        self.updateTitle(with: Storage.shared.get())
+        
+        self.task = BackgroundTask()
+        self.task?.startBackgroundTask(time: 300) // 5 minutes
+    
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(authStateChanged(sender:)),
                                                name: NSNotification.Name.init(authNotification),
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(watchedFriendsChanged(sender:)),
+                                               name: NSNotification.Name.init("WatchingFriendsDidChanged"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(lastUpdateDateChanged(sender:)),
+                                               name: NSNotification.Name.init("LastUpdateDateDidChanged"),
+                                               object: nil)
+        
+        
         self.tableView.registerCellNib(type: FriendCell.self)
         self.tableView.registerHeaderNib(type: HeaderView.self)
-        self.tableView.sectionIndexColor = UIColor.darkGray
+        self.tableView.sectionIndexColor = mainColor
         self.tableView.addSubview(self.refreshControl)
+    }
+    
+    func updateTitle(with date: Date?) {
+        guard let lDate = date else {
+            self.titleView.subtitleLabel.text = "Not updated yet"
+            return
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = NSTimeZone.default
+        dateFormatter.dateFormat = "dd MMM"
+        let firstPart = dateFormatter.string(from: lDate)
+        dateFormatter.dateFormat = "HH:mm"
+        let secondPart = dateFormatter.string(from: lDate)
+        self.titleView.subtitleLabel.text = "Last updated \(firstPart) at \(secondPart)"
+    }
+    
+    func watchedFriendsChanged(sender: Notification) {
+        let users: [User] = Storage.shared.get()
+        self.categorise(users: users)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func lastUpdateDateChanged(sender: Notification) {
+        let date: Date? = Storage.shared.get()
+        self.updateTitle(with: date)
     }
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         let users: [User] = Storage.shared.get()
         self.categorise(users: users)
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func authStateChanged(sender: Notification) {
@@ -67,6 +121,11 @@ final class FriendsController: UIViewController {
             
             let prevStateArray: [User] = Storage.shared.get()
             
+            Storage.shared.set(lastUpdate: Date())
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: NSNotification.Name.init("LastUpdateDateDidChanged"), object: nil)
+            }
+            
             let mappedArray: [User] = array.map({ (vkUser) -> User in
             
                 let user = User(user: vkUser)
@@ -75,8 +134,7 @@ final class FriendsController: UIViewController {
                     return vkUser.id == currentItem.user.id
                 })
                 {
-                    guard let prevOnline = prevStateArray[index].online else { return user }
-                    user.user.online = prevOnline
+                    user.isWatching = prevStateArray[index].isWatching
                 }
                 return user
             })
@@ -92,6 +150,7 @@ final class FriendsController: UIViewController {
     func categorise(users array: [User]) {
         
         self.friends = [:]
+        self.watchedFriends = [:]
         
         array.forEach { (user: User) in
             

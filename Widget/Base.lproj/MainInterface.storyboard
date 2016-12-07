@@ -8,7 +8,7 @@
         <!--Friends View Controller-->
         <scene sceneID="cwh-vc-ff4">
             <objects>
-                <viewController id="M4Y-Lb-cyx" customClass="FriendsViewController" customModule="VK_Online" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M4Y-Lb-cyx" customClass="FriendsViewController" customModule="VK_Widget" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
@@ -20,12 +20,26 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GU6-gA-uLd">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oNm-97-lhX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="of7-B2-MPO"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Watched"/>
+                                </segments>
+                                <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GU6-gA-uLd" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="4Zv-x5-qPT"/>
+                            <constraint firstAttribute="trailing" secondItem="oNm-97-lhX" secondAttribute="trailing" constant="8" id="KVh-uR-bVO"/>
                             <constraint firstAttribute="bottom" secondItem="GU6-gA-uLd" secondAttribute="bottom" id="PJB-rL-aVv"/>
                             <constraint firstItem="GU6-gA-uLd" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="PKV-GX-W7C"/>
+                            <constraint firstItem="oNm-97-lhX" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="R5k-YF-Fxf"/>
                             <constraint firstAttribute="trailing" secondItem="GU6-gA-uLd" secondAttribute="trailing" id="XMc-Ih-B1w"/>
+                            <constraint firstItem="oNm-97-lhX" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="8" id="YuO-nG-Gad"/>
+                            <constraint firstItem="GU6-gA-uLd" firstAttribute="top" secondItem="oNm-97-lhX" secondAttribute="bottom" constant="8" id="bu9-n6-k16"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

@@ -17,7 +17,6 @@ final class FriendCell: UITableViewCell {
     @IBOutlet weak var onlineImageView: UIImageView!
     @IBOutlet weak var onlineImageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var onlineImageViewWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var onlineImageViewLeftMarginConstraint: NSLayoutConstraint!
     @IBOutlet weak var watchButton: UIButton!
     private var user: User!
     
@@ -34,10 +33,24 @@ final class FriendCell: UITableViewCell {
             return user.user.id == self.user.user.id
         }) {
             users[index].isWatching = !self.user.isWatching
+            var watchingIDs: [String] = Storage.shared.get()
+            if users[index].isWatching {
+                watchingIDs.append(users[index].user.id.stringValue)
+            } else {
+                if let index = watchingIDs.index(where: { (str) -> Bool in
+                    return str == users[index].user.id.stringValue
+                }) {
+                    watchingIDs.remove(at: index)
+                }
+            }
+            Storage.shared.set(ids: watchingIDs)
         }
         Storage.shared.set(object: users)
         self.user.isWatching = !self.user.isWatching
         self.updateButtonState()
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name.init("WatchingFriendsDidChanged"), object: nil)
+        }
     }
     
     func updateButtonState() {
@@ -55,7 +68,8 @@ final class FriendCell: UITableViewCell {
         self.user = user
         
         self.updateButtonState()
-        self.avatarImageView.sd_setImage(with: user.user.photo_100.url, placeholderImage: nil)
+        self.avatarImageView.sd_setImage(with: user.user.photo_100.url,
+                                         placeholderImage: UIImage(named: "placeholder"))
         
         let fullName = NSMutableAttributedString()
         let firstName = NSAttributedString(string: user.user.first_name!,
@@ -71,16 +85,14 @@ final class FriendCell: UITableViewCell {
                        (user.user.online_mobile != nil && user.user.online_mobile.boolValue)
         
         if !isOnline {
-            self.onlineImageViewLeftMarginConstraint.constant = 0
             self.onlineImageViewWidthConstraint.constant = 0
         } else {
-            self.onlineImageViewLeftMarginConstraint.constant = 8
-            if (user.online_mobile != nil && !user.online_mobile.boolValue) {
-                self.onlineImageView.image = UIImage(named: "online_mobile_icon")?.withRenderingMode(.alwaysTemplate)
+            if (user.user.online_mobile != nil && user.user.online_mobile.boolValue) {
+                self.onlineImageView.image = UIImage(named: "online_mobile_icon")
                 self.onlineImageViewWidthConstraint.constant = 8
                 self.onlineImageViewHeightConstraint.constant = 16
             } else {
-                self.onlineImageView.image = UIImage(named: "online_mobile")?.withRenderingMode(.alwaysTemplate)
+                self.onlineImageView.image = UIImage(named: "online_icon")
                 self.onlineImageViewWidthConstraint.constant = 6
                 self.onlineImageViewHeightConstraint.constant = 6
             }

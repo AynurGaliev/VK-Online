@@ -25,7 +25,7 @@
                                     <segment title="All"/>
                                     <segment title="Watched"/>
                                 </segments>
-                                <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="7Pq-yx-B2W"/>
                                 </connections>

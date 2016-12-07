@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A410548A1DF764AC00972A7A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F6F1DE63C9500EE242A /* NotificationCenter.framework */; };
+		A41054941DF764AC00972A7A /* VK Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A41054891DF764AC00972A7A /* VK Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A41054981DF764BE00972A7A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464C4741DE71EDD00C72EFE /* HeaderView.swift */; };
+		A41054991DF764C100972A7A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A464C4721DE71E8100C72EFE /* HeaderView.xib */; };
+		A410549A1DF764C400972A7A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F7F1DE63E0300EE242A /* FriendCell.swift */; };
+		A410549B1DF764C700972A7A /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A464C46E1DE715F600C72EFE /* FriendCell.xib */; };
+		A410549C1DF764C900972A7A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F721DE63C9500EE242A /* FriendsViewController.swift */; };
+		A410549D1DF764CB00972A7A /* FriendsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F821DE63FB400EE242A /* FriendsPresenter.swift */; };
+		A410549E1DF764CE00972A7A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F741DE63C9500EE242A /* MainInterface.storyboard */; };
+		A41054A11DF7658100972A7A /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */; };
+		A41054A21DF7659400972A7A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1961DE6EDF100ADA206 /* Helpers.swift */; };
+		A41054A31DF765A600972A7A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1911DE6EA7500ADA206 /* Storage.swift */; };
+		A41054AA1DF7675A00972A7A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41054A91DF7675A00972A7A /* UserNotifications.framework */; };
+		A41054AC1DF7675A00972A7A /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41054AB1DF7675A00972A7A /* UserNotificationsUI.framework */; };
+		A41054AF1DF7675A00972A7A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41054AE1DF7675A00972A7A /* NotificationViewController.swift */; };
+		A41054B21DF7675A00972A7A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A41054B01DF7675A00972A7A /* MainInterface.storyboard */; };
+		A41054B61DF7675A00972A7A /* VK Notification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A41054A81DF7675A00972A7A /* VK Notification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A4165F3C1DE63C4200EE242A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F3B1DE63C4200EE242A /* AppDelegate.swift */; };
 		A4165F3E1DE63C4200EE242A /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F3D1DE63C4200EE242A /* FriendsController.swift */; };
 		A4165F411DE63C4200EE242A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4165F3F1DE63C4200EE242A /* Main.storyboard */; };
@@ -23,11 +40,30 @@
 		A480B1921DE6EA7500ADA206 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1911DE6EA7500ADA206 /* Storage.swift */; };
 		A480B1951DE6ED9500ADA206 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4165F7F1DE63E0300EE242A /* FriendCell.swift */; };
 		A480B1971DE6EDF100ADA206 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1961DE6EDF100ADA206 /* Helpers.swift */; };
+		A4A770BE1DECD75F00148929 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A770BD1DECD75F00148929 /* TitleView.swift */; };
+		A4A770C01DECD76D00148929 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A770BF1DECD76D00148929 /* TitleView.xib */; };
 		A4BA32B31DEB983D00B76FB6 /* BackgroundTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA32B21DEB983D00B76FB6 /* BackgroundTask.swift */; };
 		A4BED8331DEA37230000037B /* BackgroundUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BED8321DEA37230000037B /* BackgroundUpdater.swift */; };
 		A4CD5EA81DEB98B100D81C54 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CD5EA71DEB98B100D81C54 /* CoreAudio.framework */; };
 		A4CD5EAA1DEB9C5200D81C54 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CD5EA91DEB9C5200D81C54 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A41054921DF764AC00972A7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4165F301DE63C4100EE242A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A41054881DF764AC00972A7A;
+			remoteInfo = "VK Widget";
+		};
+		A41054B41DF7675A00972A7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4165F301DE63C4100EE242A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A41054A71DF7675A00972A7A;
+			remoteInfo = "VK Notification";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A4165F7E1DE63C9500EE242A /* Embed App Extensions */ = {
@@ -36,6 +72,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				A41054941DF764AC00972A7A /* VK Widget.appex in Embed App Extensions */,
+				A41054B61DF7675A00972A7A /* VK Notification.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +93,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A41054891DF764AC00972A7A /* VK Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "VK Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A41054911DF764AC00972A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A41054A01DF7650200972A7A /* VK Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VK Widget.entitlements"; sourceTree = "<group>"; };
+		A41054A81DF7675A00972A7A /* VK Notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "VK Notification.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A41054A91DF7675A00972A7A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		A41054AB1DF7675A00972A7A /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		A41054AE1DF7675A00972A7A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		A41054B11DF7675A00972A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A41054B31DF7675A00972A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4165F381DE63C4200EE242A /* VK Online.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK Online.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4165F3B1DE63C4200EE242A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4165F3D1DE63C4200EE242A /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
@@ -65,7 +112,6 @@
 		A4165F6F1DE63C9500EE242A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		A4165F721DE63C9500EE242A /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		A4165F751DE63C9500EE242A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		A4165F771DE63C9500EE242A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4165F7F1DE63E0300EE242A /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		A4165F821DE63FB400EE242A /* FriendsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsPresenter.swift; sourceTree = "<group>"; };
 		A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
@@ -76,8 +122,9 @@
 		A464C4741DE71EDD00C72EFE /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A480B1911DE6EA7500ADA206 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A480B1931DE6EA8500ADA206 /* VK Online.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VK Online.entitlements"; sourceTree = "<group>"; };
-		A480B1941DE6EAA100ADA206 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		A480B1961DE6EDF100ADA206 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		A4A770BD1DECD75F00148929 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		A4A770BF1DECD76D00148929 /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		A4BA32B21DEB983D00B76FB6 /* BackgroundTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
 		A4BED8321DEA37230000037B /* BackgroundUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundUpdater.swift; sourceTree = "<group>"; };
 		A4CD5EA71DEB98B100D81C54 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -85,6 +132,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A41054861DF764AC00972A7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A410548A1DF764AC00972A7A /* NotificationCenter.framework in Frameworks */,
+				A41054A11DF7658100972A7A /* VKSdkFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A41054A51DF7675A00972A7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A41054AC1DF7675A00972A7A /* UserNotificationsUI.framework in Frameworks */,
+				A41054AA1DF7675A00972A7A /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4165F351DE63C4200EE242A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,6 +164,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A410548B1DF764AC00972A7A /* VK Widget */ = {
+			isa = PBXGroup;
+			children = (
+				A41054A01DF7650200972A7A /* VK Widget.entitlements */,
+				A4165F811DE63F8300EE242A /* Friends  */,
+				A4165F741DE63C9500EE242A /* MainInterface.storyboard */,
+				A41054911DF764AC00972A7A /* Info.plist */,
+			);
+			path = "VK Widget";
+			sourceTree = "<group>";
+		};
+		A41054AD1DF7675A00972A7A /* VK Notification */ = {
+			isa = PBXGroup;
+			children = (
+				A41054AE1DF7675A00972A7A /* NotificationViewController.swift */,
+				A41054B01DF7675A00972A7A /* MainInterface.storyboard */,
+				A41054B31DF7675A00972A7A /* Info.plist */,
+			);
+			path = "VK Notification";
+			sourceTree = "<group>";
+		};
 		A4165F2F1DE63C4100EE242A = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +192,8 @@
 				A4165F8F1DE64B6000EE242A /* WebImage.framework */,
 				A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */,
 				A4165F3A1DE63C4200EE242A /* VK Online */,
-				A4165F711DE63C9500EE242A /* Widget */,
+				A410548B1DF764AC00972A7A /* VK Widget */,
+				A41054AD1DF7675A00972A7A /* VK Notification */,
 				A4165F6E1DE63C9500EE242A /* Frameworks */,
 				A4165F391DE63C4200EE242A /* Products */,
 			);
@@ -116,6 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				A4165F381DE63C4200EE242A /* VK Online.app */,
+				A41054891DF764AC00972A7A /* VK Widget.appex */,
+				A41054A81DF7675A00972A7A /* VK Notification.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +223,7 @@
 				A480B1961DE6EDF100ADA206 /* Helpers.swift */,
 				A4BED8321DEA37230000037B /* BackgroundUpdater.swift */,
 				A4BA32B21DEB983D00B76FB6 /* BackgroundTask.swift */,
+				A4A770C11DECD77200148929 /* TitleView */,
 			);
 			path = "VK Online";
 			sourceTree = "<group>";
@@ -144,19 +234,10 @@
 				A4CD5EA91DEB9C5200D81C54 /* AVFoundation.framework */,
 				A4CD5EA71DEB98B100D81C54 /* CoreAudio.framework */,
 				A4165F6F1DE63C9500EE242A /* NotificationCenter.framework */,
+				A41054A91DF7675A00972A7A /* UserNotifications.framework */,
+				A41054AB1DF7675A00972A7A /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A4165F711DE63C9500EE242A /* Widget */ = {
-			isa = PBXGroup;
-			children = (
-				A480B1941DE6EAA100ADA206 /* Widget.entitlements */,
-				A4165F811DE63F8300EE242A /* Friends  */,
-				A4165F741DE63C9500EE242A /* MainInterface.storyboard */,
-				A4165F771DE63C9500EE242A /* Info.plist */,
-			);
-			path = Widget;
 			sourceTree = "<group>";
 		};
 		A4165F811DE63F8300EE242A /* Friends  */ = {
@@ -168,6 +249,7 @@
 				A4165F821DE63FB400EE242A /* FriendsPresenter.swift */,
 			);
 			name = "Friends ";
+			path = ../Widget;
 			sourceTree = "<group>";
 		};
 		A464C4701DE7161A00C72EFE /* Friend Cell */ = {
@@ -188,9 +270,52 @@
 			name = HeaderView;
 			sourceTree = "<group>";
 		};
+		A4A770C11DECD77200148929 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				A4A770BD1DECD75F00148929 /* TitleView.swift */,
+				A4A770BF1DECD76D00148929 /* TitleView.xib */,
+			);
+			name = TitleView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A41054881DF764AC00972A7A /* VK Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A41054971DF764AC00972A7A /* Build configuration list for PBXNativeTarget "VK Widget" */;
+			buildPhases = (
+				A41054851DF764AC00972A7A /* Sources */,
+				A41054861DF764AC00972A7A /* Frameworks */,
+				A41054871DF764AC00972A7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VK Widget";
+			productName = "VK Widget";
+			productReference = A41054891DF764AC00972A7A /* VK Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A41054A71DF7675A00972A7A /* VK Notification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A41054B71DF7675A00972A7A /* Build configuration list for PBXNativeTarget "VK Notification" */;
+			buildPhases = (
+				A41054A41DF7675A00972A7A /* Sources */,
+				A41054A51DF7675A00972A7A /* Frameworks */,
+				A41054A61DF7675A00972A7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VK Notification";
+			productName = "VK Notification";
+			productReference = A41054A81DF7675A00972A7A /* VK Notification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		A4165F371DE63C4200EE242A /* VK Online */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4165F601DE63C4200EE242A /* Build configuration list for PBXNativeTarget "VK Online" */;
@@ -204,6 +329,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				A41054931DF764AC00972A7A /* PBXTargetDependency */,
+				A41054B51DF7675A00972A7A /* PBXTargetDependency */,
 			);
 			name = "VK Online";
 			productName = "VK Online";
@@ -220,6 +347,26 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Aynur Galiev";
 				TargetAttributes = {
+					A41054881DF764AC00972A7A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3EZN9G7JS8;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					A41054A71DF7675A00972A7A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3EZN9G7JS8;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 					A4165F371DE63C4200EE242A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3EZN9G7JS8;
@@ -249,16 +396,37 @@
 			projectRoot = "";
 			targets = (
 				A4165F371DE63C4200EE242A /* VK Online */,
+				A41054881DF764AC00972A7A /* VK Widget */,
+				A41054A71DF7675A00972A7A /* VK Notification */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A41054871DF764AC00972A7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A410549E1DF764CE00972A7A /* MainInterface.storyboard in Resources */,
+				A410549B1DF764C700972A7A /* FriendCell.xib in Resources */,
+				A41054991DF764C100972A7A /* HeaderView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A41054A61DF7675A00972A7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A41054B21DF7675A00972A7A /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4165F361DE63C4200EE242A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A464C4711DE7163300C72EFE /* FriendCell.xib in Resources */,
+				A4A770C01DECD76D00148929 /* TitleView.xib in Resources */,
 				A4165F461DE63C4200EE242A /* LaunchScreen.storyboard in Resources */,
 				A464C46D1DE715A400C72EFE /* MainInterface.storyboard in Resources */,
 				A464C4781DE7209100C72EFE /* HeaderView.xib in Resources */,
@@ -270,6 +438,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A41054851DF764AC00972A7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A410549C1DF764C900972A7A /* FriendsViewController.swift in Sources */,
+				A410549D1DF764CB00972A7A /* FriendsPresenter.swift in Sources */,
+				A410549A1DF764C400972A7A /* FriendCell.swift in Sources */,
+				A41054A21DF7659400972A7A /* Helpers.swift in Sources */,
+				A41054981DF764BE00972A7A /* HeaderView.swift in Sources */,
+				A41054A31DF765A600972A7A /* Storage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A41054A41DF7675A00972A7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A41054AF1DF7675A00972A7A /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4165F341DE63C4200EE242A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +468,7 @@
 				A4BA32B31DEB983D00B76FB6 /* BackgroundTask.swift in Sources */,
 				A4165F3C1DE63C4200EE242A /* AppDelegate.swift in Sources */,
 				A480B1921DE6EA7500ADA206 /* Storage.swift in Sources */,
+				A4A770BE1DECD75F00148929 /* TitleView.swift in Sources */,
 				A480B1971DE6EDF100ADA206 /* Helpers.swift in Sources */,
 				A480B1951DE6ED9500ADA206 /* FriendCell.swift in Sources */,
 				A4BED8331DEA37230000037B /* BackgroundUpdater.swift in Sources */,
@@ -287,7 +477,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A41054931DF764AC00972A7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A41054881DF764AC00972A7A /* VK Widget */;
+			targetProxy = A41054921DF764AC00972A7A /* PBXContainerItemProxy */;
+		};
+		A41054B51DF7675A00972A7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A41054A71DF7675A00972A7A /* VK Notification */;
+			targetProxy = A41054B41DF7675A00972A7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		A41054B01DF7675A00972A7A /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A41054B11DF7675A00972A7A /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		A4165F3F1DE63C4200EE242A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -310,11 +521,78 @@
 				A4165F751DE63C9500EE242A /* Base */,
 			);
 			name = MainInterface.storyboard;
+			path = ../Widget;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A41054951DF764AC00972A7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "VK Widget/VK Widget.entitlements";
+				DEVELOPMENT_TEAM = 3EZN9G7JS8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "VK Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online.VK-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A41054961DF764AC00972A7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "VK Widget/VK Widget.entitlements";
+				DEVELOPMENT_TEAM = 3EZN9G7JS8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "VK Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online.VK-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A41054B81DF7675A00972A7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 3EZN9G7JS8;
+				INFOPLIST_FILE = "VK Notification/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online.VK-Notification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A41054B91DF7675A00972A7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 3EZN9G7JS8;
+				INFOPLIST_FILE = "VK Notification/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online.VK-Notification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		A4165F5E1DE63C4200EE242A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -355,7 +633,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -399,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -414,6 +692,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "VK Online/VK Online.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -433,6 +712,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "VK Online/VK Online.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,6 +729,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A41054971DF764AC00972A7A /* Build configuration list for PBXNativeTarget "VK Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A41054951DF764AC00972A7A /* Debug */,
+				A41054961DF764AC00972A7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A41054B71DF7675A00972A7A /* Build configuration list for PBXNativeTarget "VK Notification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A41054B81DF7675A00972A7A /* Debug */,
+				A41054B91DF7675A00972A7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A4165F331DE63C4100EE242A /* Build configuration list for PBXProject "VK Online" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

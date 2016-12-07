@@ -4,19 +4,43 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>VK Notification.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>VK Online.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>VK Widget.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Widget.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A41054881DF764AC00972A7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A41054A71DF7675A00972A7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A4165F371DE63C4200EE242A</key>
 		<dict>
 			<key>primary</key>

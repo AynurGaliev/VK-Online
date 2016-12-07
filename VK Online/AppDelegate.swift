@@ -11,7 +11,7 @@ import VKSdkFramework
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     
@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         print(#function)
-        print(application.backgroundRefreshStatus.rawValue)
     
         let vkInstance = VKSdk.initialize(withAppId: "5744427")
         
@@ -56,36 +55,64 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.barStyle = UIBarStyle.default
         navigationBar.tintColor = UIColor.white
         navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-
-        application.registerUserNotificationSettings(UIUserNotificationSettings.init(types: [.alert, .sound], categories: nil))
-        UNUserNotificationCenter
         
-        let sessionConfiguration = URLSessionConfiguration.background(withIdentifier: "com.flatstack.\(UUID().uuidString)")
-        print("\(Date()) - Init fetch with \(sessionConfiguration.identifier!)")
-        //sessionConfiguration.isDiscretionary = true
-        let session = URLSession.init(configuration: sessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
+        if #available(iOS 10.0, *) {
+            
+            UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (settings) in
+                
+            })
+            
+            UNUserNotificationCenter.current().getNotificationCategories(completionHandler: { (categories) in
+                
+            })
+            
+            UNUserNotificationCenter.current().delegate = self
+            
+            let showMoreAction = UNNotificationAction(identifier: "showMore", title: "Подробнее", options: [])
+            let addBalanceAction = UNNotificationAction(identifier: "addBalance", title: "Пополнить на 500 ₽", options: [])
+            let myPlanAction = UNNotificationAction(identifier: "myPlan", title: "Мой тариф", options: [])
+            
+            let balanceCategory = UNNotificationCategory(identifier: "com.flatstack.VK-Online.Category", actions: [showMoreAction, addBalanceAction, myPlanAction], intentIdentifiers: [], options: [])
+            
+            UNUserNotificationCenter.current().setNotificationCategories([balanceCategory])
+            
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { (success, error) in
+                
+                if success && error == nil {
+                    
+                }
+            })
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5), execute: {
+                
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                
+                let content = UNMutableNotificationContent()
+                content.categoryIdentifier = "com.flatstack.VK-Online.Category"
+                content.title = "Title"
+                content.subtitle = "Subtitle"
+                content.sound = UNNotificationSound.default()
+                content.badge = 1
+                
+                let request = UNNotificationRequest(identifier: "com.VK-Online.LocalNotification", content: content, trigger: trigger)
+                
+                UNUserNotificationCenter.current().add(request)
+            })
         
-        var request = URLRequest.init(url: "https://vk.com/feed?section=comments".url!)
-        request.timeoutInterval = 15
-        
-        let task = session.downloadTask(with: request)
-        
-        task.resume()
+        } else {
+            application.registerUserNotificationSettings(UIUserNotificationSettings.init(types: [.alert, .sound], categories: nil))
+        }
         
         return true
     }
     
-    
-    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print("\(Date()) - Background fetch")
-        completionHandler(.newData)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
     }
     
-    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
-        print("\(Date()) - Session  with \(identifier)")
-        self.completionCallBack = completionHandler
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
     }
-    
     
     func applicationDidEnterBackground(_ application: UIApplication) {
         print(#function)
@@ -99,117 +126,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let appString = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String else { return true }
         return VKSdk.processOpen(url, fromApplication: appString)
     }
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        print(#function)
-        self.splashWindow?.resignKey()
-        self.splashWindow?.isHidden = true
-        self.window?.makeKeyAndVisible()
-    }
-    
-    func applicationWillResignActive(_ application: UIApplication) {
-        print(#function)
-        self.splashWindow?.makeKeyAndVisible()
-    }
 }
 
 extension AppDelegate: URLSessionDownloadDelegate {
     
     func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-        print("\(Date()) - Complete with \(session.configuration.identifier!)")
+        print(#function)
         self.completionCallBack?()
         self.completionCallBack = nil
-        self.startBackgroundSession()
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print(#function)
         
+        NotificationCenter.default.post(name: NSNotification.Name.init("DownloadDidFinished"), object: nil, userInfo: ["url" : location])
+        
         if UIApplication.shared.applicationState == .active {
             self.completionCallBack?()
             self.completionCallBack = nil
-            self.startBackgroundSession()
-        }
-        
-        guard let handle = try? FileHandle.init(forReadingFrom: location) else {
-            print("Failed to create file handle")
-            return
-        }
-        let data = handle.readDataToEndOfFile()
-        
-        DispatchQueue.global().async {
-    
-            do {
-
-                let dict = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String : Any]
-                guard let response = dict?["response"] as? Dictionary<String,Any> else { print("Serialization error at line \(#line) with \(dict)"); return }
-                
-                guard let usersArray = VKUsersArray(dictionary: response) else { print("Array creation error at line \(#line) with \(response)"); return }
-                let array = usersArray.items.map { $0 as! VKUser }
-                let prevStateArray: [User] = Storage.shared.get()
-                
-                print("Count - \(array.count)")
-                
-                let mappedArray: [User] = array.map({ (vkUser) -> User in
-
-                    let user = User(user: vkUser)
-
-                    if let index = prevStateArray.index(where: { (currentItem) -> Bool in
-                        return vkUser.id == currentItem.user.id
-                    }) {
-                        guard let prevOnline = prevStateArray[index].online else { return user }
-                        user.user.online = prevOnline
-                    }
-                    return user
-                })
-                
-                let watchingFriends: [String] = Storage.shared.get()
-                
-                let filteredArray = prevStateArray.filter { (item) -> Bool in
-                    return watchingFriends.contains(item.user.id.stringValue)
-                }
-                
-                var updatedFriends: [VKUser] = []
-                
-                filteredArray.forEach({ (item) in
-                    print("\(item.user.first_name) \(item.user.last_name) was \(item.user.online)")
-                    if let index = mappedArray.index(where: { (currentItem) -> Bool in
-                        return item.user.id == currentItem.user.id &&
-                               item.user.online != currentItem.user.online &&
-                               currentItem.user.online.boolValue
-                    }) {
-                        updatedFriends.append(array[index])
-                    }
-                })
-                
-                Storage.shared.set(object: mappedArray)
-    
-                if updatedFriends.count > 0 {
-                
-                    DispatchQueue.main.async {
-                        let notification = UILocalNotification()
-                        let friendsString = updatedFriends.map({ (user) -> String in
-                            return "\(user.first_name!) \(user.last_name!)"
-                        }).joined(separator: " ,")
-                        notification.alertBody = "\(friendsString) appeared in online"
-                        notification.alertTitle = "VK Online"
-                        notification.hasAction = false
-                        notification.fireDate = Date(timeIntervalSinceNow: 5)
-                        notification.timeZone = NSTimeZone.default
-                        notification.soundName = UILocalNotificationDefaultSoundName
-                        notification.repeatInterval = NSCalendar.Unit(rawValue: UInt(0))
-                        UIApplication.shared.scheduleLocalNotification(notification)
-                    }
-                }
-                
-            } catch let error {
-                debugPrint(error)
-            }
         }
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Swift.Void) {
-        print(#function)
         
         if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
             if challenge.protectionSpace.host == "api.vk.com" || challenge.protectionSpace.host == "vk.com" {
@@ -221,53 +159,6 @@ extension AppDelegate: URLSessionDownloadDelegate {
         
         completionHandler(URLSession.AuthChallengeDisposition.performDefaultHandling, nil)
     }
-
-    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        print(error)
-        print(#function)
-        if let _ = error {
-            self.startBackgroundSession()
-        }
-    }
-    
-    func startBackgroundSession(delay: Int = 20) {
-        
-        let sessionConfiguration = URLSessionConfiguration.background(withIdentifier: "com.flatstack.\(UUID().uuidString)")
-        print("\(Date()) - Started with \(sessionConfiguration.identifier!)")
-        let session = URLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
-        
-        let request = VKApi.friends()!
-        let friendsRequest = request.get([VK_API_FIELDS : ["photo_100,online,online_mobile"]])!
-        var preparedRequest = friendsRequest.getPreparedRequest()!
-        preparedRequest.timeoutInterval = 15
-        
-        let task = session.downloadTask(with: preparedRequest)
-        
-        if delay == 0 {
-            task.resume()
-        } else {
-            let semaphore = DispatchSemaphore(value: 0)
-            print("Start 1 - \(Date.init())")
-            DispatchQueue.global().async {
-                print(Thread.current)
-                print("Start 2 - \(Date.init())")
-                sleep(UInt32(delay+10))
-                print("Start 3 - \(Date.init())")
-                task.resume()
-                semaphore.signal()
-            }
-            
-            //Thread.sleep(forTimeInterval: <#T##TimeInterval#>)
-            
-            let _ = semaphore.wait(timeout: .now() + .seconds(delay))
-        }
-    }
-    
-    func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
-        print(error)
-        print(#function)
-    }
-    
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Swift.Void) {
         print(#function)
@@ -281,6 +172,21 @@ extension AppDelegate: URLSessionDownloadDelegate {
         }
         
         completionHandler(URLSession.AuthChallengeDisposition.performDefaultHandling, nil)
+    }
+    
+    func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
+        print(#function)
+        print(error)
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        print(#function)
+        print(error)
+        
+        if let _ = error {
+            self.completionCallBack?()
+            self.completionCallBack = nil
+        }
     }
 }
 
