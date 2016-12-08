@@ -58,14 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         if #available(iOS 10.0, *) {
             
-            UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (settings) in
-                
-            })
-            
-            UNUserNotificationCenter.current().getNotificationCategories(completionHandler: { (categories) in
-                
-            })
-            
             UNUserNotificationCenter.current().delegate = self
             
             let showMoreAction = UNNotificationAction(identifier: "showMore", title: "Подробнее", options: [])
@@ -76,27 +68,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
             UNUserNotificationCenter.current().setNotificationCategories([balanceCategory])
             
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { (success, error) in
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: { (success, error) in
                 
                 if success && error == nil {
                     
                 }
-            })
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5), execute: {
-                
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-                
-                let content = UNMutableNotificationContent()
-                content.categoryIdentifier = "com.flatstack.VK-Online.Category"
-                content.title = "Title"
-                content.subtitle = "Subtitle"
-                content.sound = UNNotificationSound.default()
-                content.badge = 1
-                
-                let request = UNNotificationRequest(identifier: "com.VK-Online.LocalNotification", content: content, trigger: trigger)
-                
-                UNUserNotificationCenter.current().add(request)
             })
         
         } else {

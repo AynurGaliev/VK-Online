@@ -17,9 +17,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     override func viewDidLoad() {
         super.viewDidLoad()
         print("DID load")
-        
-//        let size = view.bounds.size
-//        self.preferredContentSize = CGSize(width: size.width, height: size.width / 2)
     }
     
     func didReceive(_ notification: UNNotification) {

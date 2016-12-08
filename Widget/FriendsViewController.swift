@@ -29,9 +29,4 @@ final class FriendsViewController: UIViewController, NCWidgetProviding {
         NSLog("Fetched")
         completionHandler(NCUpdateResult.newData)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
