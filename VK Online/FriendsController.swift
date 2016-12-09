@@ -43,7 +43,7 @@ final class FriendsController: UIViewController {
         self.updateTitle(with: Storage.shared.get())
         
         self.task = BackgroundTask()
-        self.task?.startBackgroundTask(time: 300) // 5 minutes
+        self.task?.startBackgroundTask(time: 30) // 5 minutes
     
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(authStateChanged(sender:)),
@@ -63,23 +63,6 @@ final class FriendsController: UIViewController {
         self.tableView.registerHeaderNib(type: HeaderView.self)
         self.tableView.sectionIndexColor = mainColor
         self.tableView.addSubview(self.refreshControl)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5), execute: {
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-            
-            let content = UNMutableNotificationContent()
-            content.categoryIdentifier = "com.flatstack.VK-Online.Category"
-            content.title = "Title"
-            content.subtitle = "Subtitle"
-            content.sound = UNNotificationSound.default()
-            content.badge = 1
-            
-            let request = UNNotificationRequest(identifier: "com.VK-Online.LocalNotification", content: content, trigger: trigger)
-            
-            UNUserNotificationCenter.current().add(request)
-        })
-        
     }
     
     func updateTitle(with date: Date?) {

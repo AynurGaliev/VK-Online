@@ -25,9 +25,9 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>UNNotificationExtensionCategory</key>
-			<string>com.flatstack.VK-Online.Category</string>
+			<string>com.flatstack.NotificationCategory</string>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
-			<integer>1</integer>
+			<real>0.5</real>
 			<key>UNNotificationExtensionDefaultContentHidden</key>
 			<true/>
 		</dict>

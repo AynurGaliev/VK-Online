@@ -9,6 +9,7 @@
 import UIKit
 import VKSdkFramework
 import UserNotifications
+import SafariServices
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -56,23 +57,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         navigationBar.tintColor = UIColor.white
         navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         
+   
+        
         if #available(iOS 10.0, *) {
             
-            UNUserNotificationCenter.current().delegate = self
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
             
-            let showMoreAction = UNNotificationAction(identifier: "showMore", title: "Подробнее", options: [])
-            let addBalanceAction = UNNotificationAction(identifier: "addBalance", title: "Пополнить на 500 ₽", options: [])
-            let myPlanAction = UNNotificationAction(identifier: "myPlan", title: "Мой тариф", options: [])
+            let cancelAction = UNNotificationAction(identifier: "com.flatstack.Cancel", title: "Cancel", options: UNNotificationActionOptions.destructive)
+            let openAction = UNNotificationAction(identifier: "com.flatstack.Open", title: "Open in App", options: UNNotificationActionOptions.foreground)
             
-            let balanceCategory = UNNotificationCategory(identifier: "com.flatstack.VK-Online.Category", actions: [showMoreAction, addBalanceAction, myPlanAction], intentIdentifiers: [], options: [])
+            let mainCategory = UNNotificationCategory(identifier: "com.flatstack.NotificationCategory", actions: [cancelAction, openAction], intentIdentifiers: [], options: [])
             
-            UNUserNotificationCenter.current().setNotificationCategories([balanceCategory])
+            center.setNotificationCategories([mainCategory])
             
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: { (success, error) in
-                
-                if success && error == nil {
-                    
-                }
+            center.requestAuthorization(options: [.alert, .sound], completionHandler: { (success, error) in
+                print(error)
             })
         
         } else {
@@ -82,10 +82,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
+    @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         completionHandler()
     }
     
+    @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound])
     }
@@ -185,10 +187,20 @@ extension AppDelegate: VKSdkDelegate {
     }
 }
 
-extension AppDelegate: VKSdkUIDelegate {
+extension AppDelegate: VKSdkUIDelegate, SFSafariViewControllerDelegate {
     
     func vkSdkShouldPresent(_ controller: UIViewController!) {
-       self.window?.rootViewController?.present(controller, animated: true, completion: nil)
+        
+        let _ = controller.view
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+            guard let navController = self.window?.rootViewController as? UINavigationController else { return }
+            guard let topViewController = navController.topViewController else { return }
+            topViewController.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
     }
     
     func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {

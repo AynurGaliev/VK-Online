@@ -81,6 +81,10 @@ final class User: NSObject, NSCoding {
         self.user = user
     }
     
+    var fullName: String {
+        return "\(self.user.first_name) \(self.user.last_name)"
+    }
+    
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.isWatching, forKey: "isWatching")
         aCoder.encode(self.user.id, forKey: "id")

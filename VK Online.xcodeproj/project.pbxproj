@@ -43,9 +43,10 @@
 		A4A770BE1DECD75F00148929 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A770BD1DECD75F00148929 /* TitleView.swift */; };
 		A4A770C01DECD76D00148929 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A770BF1DECD76D00148929 /* TitleView.xib */; };
 		A4BA32B31DEB983D00B76FB6 /* BackgroundTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA32B21DEB983D00B76FB6 /* BackgroundTask.swift */; };
-		A4BED8331DEA37230000037B /* BackgroundUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BED8321DEA37230000037B /* BackgroundUpdater.swift */; };
 		A4CD5EA81DEB98B100D81C54 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CD5EA71DEB98B100D81C54 /* CoreAudio.framework */; };
 		A4CD5EAA1DEB9C5200D81C54 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CD5EA91DEB9C5200D81C54 /* AVFoundation.framework */; };
+		A4E606611DFA45A50050756A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480B1911DE6EA7500ADA206 /* Storage.swift */; };
+		A4E606621DFA479C0050756A /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4165F8B1DE64B5000EE242A /* VKSdkFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +127,6 @@
 		A4A770BD1DECD75F00148929 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		A4A770BF1DECD76D00148929 /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		A4BA32B21DEB983D00B76FB6 /* BackgroundTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
-		A4BED8321DEA37230000037B /* BackgroundUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundUpdater.swift; sourceTree = "<group>"; };
 		A4CD5EA71DEB98B100D81C54 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		A4CD5EA91DEB9C5200D81C54 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -146,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A41054AC1DF7675A00972A7A /* UserNotificationsUI.framework in Frameworks */,
+				A4E606621DFA479C0050756A /* VKSdkFramework.framework in Frameworks */,
 				A41054AA1DF7675A00972A7A /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +222,6 @@
 				A4165F471DE63C4200EE242A /* Info.plist */,
 				A480B1911DE6EA7500ADA206 /* Storage.swift */,
 				A480B1961DE6EDF100ADA206 /* Helpers.swift */,
-				A4BED8321DEA37230000037B /* BackgroundUpdater.swift */,
 				A4BA32B21DEB983D00B76FB6 /* BackgroundTask.swift */,
 				A4A770C11DECD77200148929 /* TitleView */,
 			);
@@ -456,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A41054AF1DF7675A00972A7A /* NotificationViewController.swift in Sources */,
+				A4E606611DFA45A50050756A /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +472,6 @@
 				A4A770BE1DECD75F00148929 /* TitleView.swift in Sources */,
 				A480B1971DE6EDF100ADA206 /* Helpers.swift in Sources */,
 				A480B1951DE6ED9500ADA206 /* FriendCell.swift in Sources */,
-				A4BED8331DEA37230000037B /* BackgroundUpdater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +569,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "VK Notification/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -583,6 +587,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 3EZN9G7JS8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "VK Notification/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -699,6 +707,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "VK Online/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -719,6 +728,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "VK Online/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.VK-Online";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -736,6 +746,7 @@
 				A41054961DF764AC00972A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A41054B71DF7675A00972A7A /* Build configuration list for PBXNativeTarget "VK Notification" */ = {
 			isa = XCConfigurationList;
@@ -744,6 +755,7 @@
 				A41054B91DF7675A00972A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4165F331DE63C4100EE242A /* Build configuration list for PBXProject "VK Online" */ = {
 			isa = XCConfigurationList;

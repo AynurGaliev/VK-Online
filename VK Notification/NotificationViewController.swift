@@ -9,21 +9,32 @@
 import UIKit
 import UserNotifications
 import UserNotificationsUI
+import VKSdkFramework
 
-class NotificationViewController: UIViewController, UNNotificationContentExtension {
+class NotificationViewController: UIViewController, UNNotificationContentExtension, UITableViewDataSource {
 
-    @IBOutlet var label: UILabel?
+    private var users: [String] = []
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("DID load")
+        let bounds = self.view.bounds
+        self.preferredContentSize = CGSize(width: bounds.size.width, height: bounds.size.width*0.5)
     }
     
     func didReceive(_ notification: UNNotification) {
-        print(notification)
-        self.label?.text = notification.request.content.body
+        self.users = notification.request.content.userInfo["users"] as? [String] ?? []
+        self.tableView.reloadData()
     }
 
-    
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.users.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        let userString = self.users[indexPath.row]
+        cell?.textLabel?.text = "\(indexPath.row + 1). \(userString)"
+        return cell!
+    }
 }

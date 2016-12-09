@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 import VKSdkFramework
+import UserNotifications
+import UserNotificationsUI
 
 final class BackgroundTask: NSObject {
 
@@ -91,18 +93,40 @@ final class BackgroundTask: NSObject {
                 if updatedFriends.count > 0 {
                     
                     DispatchQueue.main.async {
-//                        let notification = UILocalNotification()
-//                        let friendsString = updatedFriends.map({ (user) -> String in
-//                            return "\(user.first_name!) \(user.last_name!)"
-//                        }).joined(separator: " ,")
-//                        notification.alertBody = "\(friendsString) appeared in online"
-//                        notification.alertTitle = "VK Online"
-//                        notification.hasAction = false
-//                        notification.fireDate = Date(timeIntervalSinceNow: 0)
-//                        notification.timeZone = NSTimeZone.default
-//                        notification.soundName = UILocalNotificationDefaultSoundName
-//                        notification.repeatInterval = NSCalendar.Unit(rawValue: UInt(0))
-//                        UIApplication.shared.scheduleLocalNotification(notification)
+                        
+                        if #available(iOS 10.0, *) {
+                            
+                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+                            
+                            let content = UNMutableNotificationContent()
+                            content.categoryIdentifier = "com.flatstack.NotificationCategory"
+                            content.title = "VK Online alert"
+                            content.body = "Somebody appeared in online..." // Must not be empty
+                            content.sound = UNNotificationSound.default()
+                            content.badge = 1
+                            content.userInfo["users"] = updatedFriends.map({ (user) -> String in
+                                return "\(user.first_name!) \(user.last_name!)"
+                            })
+                            
+                            let request = UNNotificationRequest(identifier: "com.VK-Online.LocalNotification", content: content, trigger: trigger)
+                            
+                            UNUserNotificationCenter.current().add(request)
+                            
+                        } else {
+                         
+                            let notification = UILocalNotification()
+                            let friendsString = updatedFriends.map({ (user) -> String in
+                                return "\(user.first_name!) \(user.last_name!)"
+                            }).joined(separator: " ,")
+                            notification.alertBody = "\(friendsString) appeared in online"
+                            notification.alertTitle = "VK Online"
+                            notification.hasAction = false
+                            notification.fireDate = Date(timeIntervalSinceNow: 0)
+                            notification.timeZone = NSTimeZone.default
+                            notification.soundName = UILocalNotificationDefaultSoundName
+                            notification.repeatInterval = NSCalendar.Unit(rawValue: UInt(0))
+                            UIApplication.shared.scheduleLocalNotification(notification)
+                        }
                     }
                 }
                 
@@ -172,7 +196,7 @@ final class BackgroundTask: NSObject {
             self.task = UIBackgroundTaskInvalid
             self.timer?.invalidate()
             self.timer = nil
-            //player.stop()
+            self.player?.stop()
             print("###############Background Task Expired")
         }
         
@@ -196,7 +220,7 @@ final class BackgroundTask: NSObject {
                 try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
                 try AVAudioSession.sharedInstance().setActive(true)
                 
-                self.player = try AVAudioPlayer.init(contentsOf: url)
+                self.player = try AVAudioPlayer(contentsOf: url)
                 self.player?.volume = 0
                 self.player?.numberOfLoops = -1
                 self.player?.prepareToPlay()
